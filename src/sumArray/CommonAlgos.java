@@ -10,8 +10,10 @@ public class CommonAlgos {
     {
         if(str.isEmpty())
         {
-
+            return;
         }
+
+
     }
 
     void preFixToPostFix(String exp)
