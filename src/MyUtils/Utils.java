@@ -1,6 +1,7 @@
 package MyUtils;
 import javafx.util.Pair;
 import java.util.*;
+import java.util.regex.Pattern;
 
 //https://www.geeksforgeeks.org/pair-class-in-java/
 //https://www.geeksforgeeks.org/iterating-arraylists-java/
@@ -10,10 +11,11 @@ import java.util.*;
 
 public class Utils {
     public static void main(String args[]) {
-        StackInJava();
+        StringOperation();
+        // StackInJava();
         // MapTraversal();
-//        ArrayListTraversal ();
-       PairInJava();
+        // ArrayListTraversal ();
+        // PairInJava();
     }
 
     public static void PairInJava() {
@@ -182,6 +184,28 @@ public class Utils {
             System.out.println("Element not found");
         else
             System.out.println("Element is found at position " + pos);
+    }
+
+    //https://www.geeksforgeeks.org/split-string-java-examples/
+    static void StringOperation() {
+        String str = "Welcome to geeksforgeeks";
+        // Specifying the pattern to be searched
+        Pattern pattern = Pattern.compile("\\s");
+
+        // splitting String str with a pattern
+        // (i.e )splitting the string whenever their
+        //  is whitespace and store in temp array.
+        String[] temp = pattern.split(str);
+        String result = "";
+        for (int i = 0; i < temp.length; i++) {
+           // System.out.println(temp[i]);
+        }
+
+        String str1 = "geekss@for@geekss";
+        String[] arrOfStr = str1.split("@", 3);
+
+        for (String a : arrOfStr)
+            System.out.println(a);
     }
 }
 

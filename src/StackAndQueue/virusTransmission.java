@@ -19,7 +19,7 @@ public class virusTransmission {
     }
     static boolean isAnyHealtyhCell(String[] Matrix)
     {
-        for(int i = 0; i < Matrix.length; i++) {
+            for(int i = 0; i < Matrix.length; i++) {
             for (int j = 0; j < Matrix[i].length(); j++) {
                 if(Matrix[i].charAt(j) == '1' || Matrix[i].charAt(j) == '2')
                     return true;
