@@ -148,6 +148,19 @@ public class javaNotes {
            54.If there's a single thread that writes to the volatile variable and other threads only read the volatile variable then
             just using volatile is enough, however, if there's a possibility of multiple threads writing to the volatile variable
              then synchronized would be required to ensure atomic writes to the variable.
+           56.The String literal isn't allocated on the heap rather it lives in a special area called the String pool.
+            The String pool consists of string literals that can reused and aren't removed from the pool even when there
+            may be no reference to them. Therefore, if you run the same program initializing the str variable with a string literal,
+             the print message would be different.
+           57.reference types in Java:
+                 Strong Reference
+                 Weak Reference
+                 Soft Reference
+                 Phantom Reference
+           57.Java guarantees that all soft referenced objects are cleaned up before it throws an OutOfMemoryError.
+           58.The difference between WeakReference and SoftReference is that the Garbage collector can collect an object
+           if only weak references are pointing to it i.e. a weak reference is eagerly collected.
+           On the other hand, objects with SoftReference are only collected when the JVM absolutely needs memory.
 
      */
 }

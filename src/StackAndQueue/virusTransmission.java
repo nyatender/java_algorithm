@@ -147,7 +147,6 @@ public class virusTransmission {
 
         return result;
     }
-
     // Driver method
     public static void main(String[] args)
     {
@@ -175,8 +174,8 @@ public class virusTransmission {
         };
         Iterator it = input.iterator();
         while(it.hasNext()) {
-            int result = findInfectedDays((String[])it.next());
-            System.out.println("result " + " = " + result);
+            //int result = findInfectedDays((String[])it.next());
+            //System.out.println("result " + " = " + result);
         }
     }
 }
