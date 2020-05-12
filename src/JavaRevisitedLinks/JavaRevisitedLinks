@@ -1,0 +1,68 @@
+
+Date: 5/05/2020
+Collections interview Questions:
+https://javarevisited.blogspot.com/2011/11/collection-interview-questions-answers.html#axzz5Y4KkQFHS
+https://www.java67.com/2013/06/how-get-method-of-hashmap-or-hashtable-works-internally.html
+https://www.java67.com/2015/06/what-is-fail-safe-and-fail-fast-iterator-in-java.html
+https://javarevisited.blogspot.com/2011/04/difference-between-concurrenthashmap.html
+https://javarevisited.blogspot.com/2010/10/what-is-difference-between-enumeration.html
+http://javarevisited.blogspot.com/2015/08/difference-between-HashMap-vs-TreeMap-vs-LinkedHashMap-Java.html
+https://www.java67.com/2012/07/sort-list-ascending-descending-order-set-arraylist.html
+
+At least you should know that :
+1) Two unequal objects may return the same hashcode.
+2) When two objects are equal by equals(), they must have the same hashcode.
+
+->poll() vs remove() method of Queue interface
+  If Queue is empty() then a call to remove() method will throw Exception
+  while a call to poll() method returns null.
+
+->Fail-fast iterator traverse over original collection class while fail-safe iterator
+  traverse over a copy or view of original collection.
+->Iterator returned by synchronized Collection are fail-fast while iterator
+  returned by concurrent collections are fail-safe in Java.
+->only Concurrent Collections introduced in JDK 1.5 e.g. CopyOnWriteArrayList and CopyOnWriteArraySet supports fail safe Iteration.
+
+->Map to create it's synchronized version by using Collections.synchronizedMap() method
+->By default ConcurrentHashMap simultaneously allows 16 threads to read and write from Map without any external synchronization.
+->The synchronized collections classes, Hashtable, and Vector, and the synchronized wrapper classes, Collections.synchronizedMap()
+   and Collections.synchronizedList(), provide a basic conditionally thread-safe implementation of Map and List.
+-> ConcurrentHashMap introduced the concept of segmentation
+->ConcurrentHashMap does not allow null keys or null values while synchronized HashMap allows one null key.
+
+->Iterator also allows you to remove elements from collection during traversal but Enumeration doesn't allow that,
+  it doesn't got the remove() method.
+->Enumeration is also a legacy class and not all Collection supports it e.g. Vector supports Enumeration but ArrayList doesn't.
+->functionality of Enumeration interface is duplicated by the Iterator interface.
+->Also Iterator is more secure and safe as compared to Enumeration because it  does not allow other thread to modify
+ the collection object while some thread is iterating over it and throws ConcurrentModificationException.
+ This is by far most important fact for me for deciding between Iterator vs Enumeration in Java.
+
+->TreeMap, which sorts elements in natural order doesn't allow null keys because compareTo() method throws NullPointerException if compared with null.
+
+
+
+
+
+Date: 6/5/2020
+https://javarevisited.blogspot.com/2020/04/50-java-collection-and-generics-interview-questions-answers.html#more
+https://javarevisited.blogspot.com/2015/01/why-override-equals-hashcode-or-tostring-java.html
+https://javarevisited.blogspot.com/2013/08/10-equals-and-hashcode-interview.html
+https://www.java67.com/2012/11/difference-between-operator-and-equals-method-in.html
+
+== is an operator and equals() is method.
+== operator compares reference or memory location of objects in the heap, whether they point to the same location or not.
+When we talk about equals() method the main purpose is to compare the state of two objects or contents of the object.
+But there is one relation between this two is default implementation of equals() method work like == means it will check
+the memory reference of the object if they point to the same location then two objects are equals and it is defined in Object class.
+
+
+
+Multithreading:
+https://javarevisited.blogspot.com/2018/08/how-to-avoid-deadlock-in-java-threads.html#more
+https://javarevisited.blogspot.com/2018/07/java-multi-threading-interview-questions-answers-from-investment-banks.html#more
+https://javarevisited.blogspot.com/2013/12/inter-thread-communication-in-java-wait-notify-example.html#more
+
+
+
+

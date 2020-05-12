@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 //https://howtodoinjava.com/java/collections/arraylist/iterate-through-objects/
 //https://howtodoinjava.com/java/collections/arraylist/initialize-arraylist/
 //https://www.geeksforgeeks.org/hashmap-containsvalue-method-in-java/
-
+//https://www.tutorialspoint.com/how-can-we-initialize-a-boolean-array-in-java
 public class Utils {
     public static void main(String args[]) {
         StringOperation();
@@ -206,6 +206,47 @@ public class Utils {
 
         for (String a : arrOfStr)
             System.out.println(a);
+    }
+
+    static public void TwoDimentionalArray(int size)
+    {
+       // int[][] wrong = new int[][]; // not OK, you must specify 1st dimension
+       int[][] right = new int[size][]; // OK
+
+    }
+
+    static public void addToSet()
+    {
+        // Create a new HashSet of String objects
+        HashSet<String> setOfStrs1 = new HashSet<>();
+
+        // Adding elements in HashSet
+        setOfStrs1.add("hello");
+        setOfStrs1.add("abc");
+        setOfStrs1.add("time");
+        setOfStrs1.add("Hi");
+
+        System.out.println("setOfStrs1 = " + setOfStrs1);
+
+        // Create a new HashSet of String objects
+        HashSet<String> setOfStrs2 = new HashSet<>();
+
+        // Adding elements in HashSet
+        setOfStrs2.add("this");
+        setOfStrs2.add("that");
+        setOfStrs2.add("there");
+
+        System.out.println("setOfStrs2 = " + setOfStrs2);
+
+        // Merge Set 2 in Set 1
+        boolean bResult = setOfStrs1.addAll(setOfStrs2);
+
+        if(bResult)
+        {
+            System.out.println("Merging of Set 1 & Set 2 Successfull");
+        }
+
+        System.out.println("setOfStrs1 = " + setOfStrs1);
     }
 }
 

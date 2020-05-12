@@ -1,8 +1,5 @@
 package Grokking_java_interview;
 
-public class javaNotes {
-
-    /*
     1. Java is pass by value only. Even reference data types are passed by value.
     2. Methods of a class can be overloaded in Java by:
        -> Changing the number of parameters
@@ -162,5 +159,4 @@ public class javaNotes {
            if only weak references are pointing to it i.e. a weak reference is eagerly collected.
            On the other hand, objects with SoftReference are only collected when the JVM absolutely needs memory.
 
-     */
-}
+
