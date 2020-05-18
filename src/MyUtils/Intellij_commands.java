@@ -16,7 +16,9 @@ cltr + '+' + '/'      //uncomment the code
 
 cltr + D            // Duplicate block or line
 
-Tab                 // To move betweeen template fields.
+Tab                 // To move between template fields.
+
+Open up Settings    // Alt + Ctrl + S
 
 F7 to step in, F8 to step to the next statement and f9 to step to the next breakpoint.
 

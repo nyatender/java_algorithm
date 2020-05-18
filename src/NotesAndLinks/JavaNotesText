@@ -160,3 +160,6 @@ package Grokking_java_interview;
            On the other hand, objects with SoftReference are only collected when the JVM absolutely needs memory.
 
 
+
+
+
