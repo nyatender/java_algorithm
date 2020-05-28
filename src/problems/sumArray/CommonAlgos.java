@@ -1,9 +1,4 @@
-package sumArray;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Stack;
+package problems.sumArray;
 
 public class CommonAlgos {
 

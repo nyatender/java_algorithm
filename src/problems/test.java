@@ -2,35 +2,41 @@ package problems;
 
 public class test {
 
+
     public static void main(String[] args)
     {
-        abc a = new abc(2);
-        abc b = new abc(3);
-        System.out.println(" Before swap ");
-        System.out.println(a.a + " " + b.a);
-        Swap(a, b);
-        System.out.println(" After swap ");
-        System.out.println(a.a + " " + b.a);
+        base1 obj = new b();
+        obj.fun();
+//        Animal obj = new Dog();
+//        obj.bark();
+
+//        abc a = new abc(2);
+//        abc b = new abc(3);
+//        System.out.println(" Before swap ");
+//        System.out.println(a.a + " " + b.a);
+//        Swap(a, b);
+//        System.out.println(" After swap ");
+//        System.out.println(a.a + " " + b.a);
     }
-    static void Swap(abc a, abc b)
-    {
-        int t = a.a;
-        a.a = b.a;
-        b.a = t;
-    }
+
 }
 
-class abc {
-    abc(int b) {
-        a = b;
+interface base1{
+    default void fun()
+    {
+        System.out.println("in base1");
     }
-    public int a;
+}
+interface base2 {
+//    default void fun()
+//    {
+//        System.out.println("in base2");
+//    }
+}
 
-    public int getA() {
-        return a;
-    }
-
-    public void setA(int a) {
-        this.a = a;
-    }
+class b implements base1, base2 {
+//    public void fun()
+//    {
+//        System.out.println("in b");
+//    }
 }

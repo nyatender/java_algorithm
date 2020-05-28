@@ -15,6 +15,7 @@ public class LRU {
     // present in cache. Else it moves the key to
     // front by first removing it and then adding
     // it, and returns true.
+
     public boolean get(int key)
     {
         if (!cache.contains(key))
@@ -23,7 +24,6 @@ public class LRU {
         cache.add(key);
         return true;
     }
-
     /* Refers key x with in the LRU cache */
     public void refer(int key)
     {

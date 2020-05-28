@@ -1,10 +1,8 @@
-package StackAndQueue;
+package problems.StackAndQueue;
 
-import java.lang.Object;
 import java.util.*;
 import javafx.util.Pair;
 
-import javax.xml.transform.stream.StreamSource;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 

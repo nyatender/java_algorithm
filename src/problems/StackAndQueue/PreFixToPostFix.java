@@ -1,4 +1,4 @@
-package StackAndQueue;
+package problems.StackAndQueue;
 
 import java.util.ArrayList;
 import java.util.Iterator;

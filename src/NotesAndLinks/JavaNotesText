@@ -32,6 +32,9 @@ package Grokking_java_interview;
         finalize()
         getClass()
         toString()
+        wait()
+        Notify()
+        NotifyAll()
       11. Always use the equals() method when comparing strings!
         String myStr = "abc";
         System.out.println(myStr == "abc");
@@ -107,7 +110,8 @@ package Grokking_java_interview;
          31.Lambda expressions allow us to pass code as data or functionality as a method argument.
            Lambda expressions can be used to replace writing anonymous classes, when the class implements a functional interface.
            A functional interface has only a single abstract method and may have default or static methods.
-         32.We can capture the local variables in the enclosing scope of the lambda expression as we have done in the example with the variable i.
+         32.We can capture the local variables in the enclosing scope of the lambda expression as we have done in the
+            example with the variable i.
             The restriction is however that i should be either final or effectively final.
              If you try to change the value of i after defining the lambda, you'll get a compile error
          33.Generics in Java were released with J2SE 1.5 in 2004. Later on, J2SE 1.5 was renamed to Java SE 5.0.

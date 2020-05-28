@@ -1,6 +1,4 @@
-package StackAndQueue;
-
-import java.util.Vector;
+package problems.StackAndQueue;
 
 public class PascalArray {
 

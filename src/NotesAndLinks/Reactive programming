@@ -1,0 +1,20 @@
+
+
+Reactive programming:
+One way to implement a microservice is reactive programming.
+Oftentimes it is stated that microservices must be implemented with reactive technologies
+
+reactive” based on the following characteristics:
+Responsive #
+    Responsive means that the system responds as fast as possible.
+Resilient #
+    Because of resilience the system remains available even if parts fail.
+Elastic #
+    The system can deal with different levels of load, for instance by using additional resources.
+    After the load peak subsides the resources are freed again.
+Asynchronous communication #
+    The system uses asynchronous communication (message-driven).
+
+
+Spring cloud #
+Spring Cloud is a collection of extensions for Spring Boot which are useful for cloud applications and for microservices.
