@@ -10,10 +10,20 @@ import java.util.regex.Pattern;
 //https://www.geeksforgeeks.org/hashmap-containsvalue-method-in-java/
 //https://www.tutorialspoint.com/how-can-we-initialize-a-boolean-array-in-java
 public class Utils {
-    static public void TwoDimentionalArray(int size)
+    static public void main(String[] args)
     {
+        int size = 10;
        // int[][] wrong = new int[][]; // not OK, you must specify 1st dimension
        int[][] right = new int[size][]; // OK
+
+        isDigit();
+    }
+    public static void isDigit()
+    {
+        String str = "abc123";
+        for(int i = 0; i < str.length(); i++)
+            if(Character.isDigit(str.charAt(i)))
+                System.out.println(str.charAt(i));
     }
 }
 

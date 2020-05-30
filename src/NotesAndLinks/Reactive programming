@@ -1,7 +1,7 @@
 
 
 Reactive programming:
-One way to implement a microservice is reactive programming.
+One way to implement a microservices is reactive programming.
 Oftentimes it is stated that microservices must be implemented with reactive technologies
 
 reactive” based on the following characteristics:

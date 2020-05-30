@@ -58,6 +58,7 @@ class MedianOfAStream {
 
         return avalibaleCapital;
     }
+
     public static void main(String[] args) {
         MedianOfAStream medianOfAStream = new MedianOfAStream();
         medianOfAStream.insertNum(3);
