@@ -78,7 +78,9 @@ class Consumer extends Thread {
                 sharedQ.notify();
 
                 //termination condition
-                if(number == 3){break; }
+                if(number == 3){
+                    break;
+                }
             }
         }
     }

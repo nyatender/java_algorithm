@@ -164,6 +164,16 @@ package Grokking_java_interview;
            On the other hand, objects with SoftReference are only collected when the JVM absolutely needs memory.
 
 
+           //https://stackoverflow.com/questions/10594052/overriding-vs-hiding-java-confused
+           Method hiding :
+           This is the difference between overrides and hiding,
+
+           If both method in parent class and child class are an instance method, it called overrides.
+           If both method in parent class and child class are static method, it called hiding.
+           One method cant be static in parent and as an instance in the child. and visa versa.
+
+
+
 
 
 

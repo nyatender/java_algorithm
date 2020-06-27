@@ -24,6 +24,8 @@ F7 to step in, F8 to step to the next statement and f9 to step to the next break
 
 Default: Type psvm (public static void main) > press Tab.
 
+alt + shift + enter  //import packages using
+
 //https://stackoverflow.com/questions/13751/how-can-i-permanently-enable-line-numbers-in-intellij
 
  */

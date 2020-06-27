@@ -17,9 +17,10 @@ public class StringOprations {
         // (i.e )splitting the string whenever their
         //  is whitespace and store in temp array.
         String[] temp = pattern.split(str);
+        //pattern.intern
         String result = "";
         for (int i = 0; i < temp.length; i++) {
-            // System.out.println(temp[i]);
+            System.out.println(temp[i].contains("x") == true);
         }
 
         String str1 = "geekss@for@geekss";

@@ -28,7 +28,7 @@ At least you should know that :
 ->The synchronized collections classes, Hashtable, and Vector, and the synchronized wrapper classes, Collections.synchronizedMap()
    and Collections.synchronizedList(), provide a basic conditionally thread-safe implementation of Map and List.
 -> ConcurrentHashMap introduced the concept of segmentation
-->ConcurrentHashMap does not allow null keys or null values while synchronized HashMap allows one null key.
+-> ConcurrentHashMap does not allow null keys or null values while synchronized HashMap allows one null key.
 
 ->Iterator also allows you to remove elements from collection during traversal but Enumeration doesn't allow that,
   it doesn't got the remove() method.
@@ -38,8 +38,8 @@ At least you should know that :
  the collection object while some thread is iterating over it and throws ConcurrentModificationException.
  This is by far most important fact for me for deciding between Iterator vs Enumeration in Java.
 
-->TreeMap, which sorts elements in natural order doesn't allow null keys because compareTo() method throws NullPointerException if compared with null.
-
+->TreeMap, which sorts elements in natural order doesn't allow null keys because compareTo() method throws NullPointerException
+ if compared with null.
 
 Spring Rest:
 https://javarevisited.blogspot.com/2018/02/top-20-spring-rest-interview-questions-answers-java.html#more
@@ -61,6 +61,11 @@ https://javarevisited.blogspot.com/2020/04/50-java-collection-and-generics-inter
 https://javarevisited.blogspot.com/2015/01/why-override-equals-hashcode-or-tostring-java.html
 https://javarevisited.blogspot.com/2013/08/10-equals-and-hashcode-interview.html
 https://www.java67.com/2012/11/difference-between-operator-and-equals-method-in.html
+
+classLoader:
+https://javarevisited.blogspot.com/2012/12/how-classloader-works-in-java.html
+garbage collection:
+https://javarevisited.blogspot.com/2011/04/garbage-collection-in-java.html
 
 Typecasting:
 https://javarevisited.blogspot.com/2012/12/what-is-type-casting-in-java-class-interface-example.html
@@ -89,6 +94,15 @@ https://javarevisited.blogspot.com/search/label/hibernate%20interview%20question
 
 Design Pattern:
 https://javarevisited.blogspot.com/2012/06/20-design-pattern-and-software-design.html
+
+Interface vs abstract class:
+https://javarevisited.blogspot.com/2013/05/difference-between-abstract-class-vs-interface-java-when-prefer-over-design-oops.html#:~:text=1)%20Interface%20in%20Java%20can,provide%20common%20or%20default%20functionality.
+
+Thread vs Runnable
+https://javarevisited.blogspot.com/2012/01/difference-thread-vs-runnable-interface.html
+
+
+
 
 
 

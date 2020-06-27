@@ -8,25 +8,21 @@ public class inheritance {
     }
 }
 
-class Persian {
-
-    protected void whatsUp() {
-        System.out.println("che khabar?");
-    }
-}
-
 interface AlienLanguage {
-
     default void whatsup(){
         System.out.println("yada yadda, more yadda yaddda");
     }
 }
 
-class Bilingual extends Persian implements AlienLanguage {
+class Persian {
+    protected void whatsUp() {
+        System.out.println("che khabar?");
+    }
+}
 
+class Bilingual extends Persian implements AlienLanguage {
     public void converse() {
         whatsUp();
         AlienLanguage.super.whatsup();
     }
-
 }

@@ -3,7 +3,7 @@ package DesignPatterns;
 public class Singleton {
     private static Singleton instance;
 
-    public static void main(String[] args)
+    public  void main(String[] args)
     {
         Singleton ins = Singleton.getInstance();
 
@@ -19,7 +19,18 @@ public class Singleton {
                 }
             }
         }
-
         return instance;
+    }
+}
+
+class SingletonThreadSafe {
+    private SingletonThreadSafe() {}
+
+    private static class SingletonHolder {
+        private static final Singleton INSTANCE = new Singleton();
+    }
+
+    public static Singleton getInstance() {
+        return SingletonHolder.INSTANCE;
     }
 }

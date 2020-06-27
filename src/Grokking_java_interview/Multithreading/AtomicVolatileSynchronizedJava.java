@@ -1,4 +1,4 @@
-package Multithreading;
+package Grokking_java_interview.Multithreading;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

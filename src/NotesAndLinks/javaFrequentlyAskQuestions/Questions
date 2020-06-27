@@ -1,0 +1,102 @@
+
+//https://www.edureka.co/blog/interview-questions/java-interview-questions/#Jdk-Jre-and-Jvm
+Q25. What is Java String Pool?
+Java String pool refers to a collection of Strings which are stored in heap memory.
+In this, whenever a new object is created, String pool first checks whether the object is already present in the pool or not.
+If it is present, then the same reference is returned to the variable else new object will be created
+in the String pool and the respective reference will be returned.
+
+Q27. What is constructor chaining in Java?
+In Java, constructor chaining is the process of calling one constructor from another with respect to the current object.
+ Constructor chaining is possible only through legacy where a subclass constructor is responsible for invoking the
+ superclass’ constructor first. There could be any number of classes in the constructor chain. Constructor chaining can
+ be achieved in two ways:
+
+Within the same class using this()
+From base class using super()
+
+Q29. What is a classloader in Java?
+The Java ClassLoader is a subset of JVM (Java Virtual Machine) that is responsible for loading the class files.
+Whenever a Java program is executed it is first loaded by the classloader. Java provides three built-in classloaders:
+
+Bootstrap ClassLoader
+Extension ClassLoader
+System/Application ClassLoader
+
+Q32. What is a Map in Java?
+Map doesn’t contain duplicate keys.
+Each key can map at max one value.
+
+OOPS:
+Q15. What is a marker interface?
+A Marker interface can be defined as the interface having no data member and member functions.
+In simpler terms, an empty interface is called the Marker interface. The most common examples of Marker interface in
+Java are Serializable, Cloneable etc. The marker interface can be declared as follows.
+
+public interface Serializable{
+}
+
+Q17. What is a copy constructor in Java?
+Copy constructor is a member function that is used to initialize an object using another object of the same class.
+Though there is no need for copy constructor in Java since all objects are passed by reference. Moreover,
+Java does not even support automatic pass-by-value.
+
+Ques: Why hashtable don't allow null keys.
+On the other hand Hashtable does not allow null keys. This is because the objects used as keys in a Hashtable
+implements the hashCode() and equals() methods for their storage and retrieval.
+Since null is not an object it cannot implement the methods. If you try hashing a null key, it will throw a NullPointerException .
+
+Ques: HashSet vs TreeSet
+HashSet -> Can able to store null objects
+TreeSet -> Couldn’t store null objects
+
+https://www.softwaretestinghelp.com/core-java-interview-questions/
+Q #32) What are the types of Exceptions?
+
+Answer: There are two types of Exceptions. They are explained below in detail.
+a) Checked Exception:
+These exceptions are checked by the compiler at the time of compilation. Classes that extend Throwable class except
+Runtime exception and Error are called checked Exception. Checked Exceptions must either declare the exception using
+throws keyword (or) surrounded by appropriate try/catch.For Example, ClassNotFound Exception
+
+b) Unchecked Exception:
+These exceptions are not checked during the compile time by the compiler.  The compiler doesn’t force to handle these exceptions.
+ It includes:
+Arithmetic Exception
+ArrayIndexOutOfBounds Exception
+
+Ques: Exceptions
+try, catch, finally-> for code clean-up(must fall in it)
+
+Q #41) What does the yield method of the Thread class do?
+Answer: A yield () method moves the currently running thread to a runnable state and allows the other threads for execution.
+So that equal priority threads have a chance to run. It is a static method. It doesn’t release any lock.
+Yield () method moves the thread back to the Runnable state only, and not the thread to sleep (), wait () (or) block.
+
+Q #53) Which methods are used during the Serialization and Deserialization process?
+Answer: ObjectOutputStream and ObjectInputStream classes are higher level java.io.package.
+We will use them with lower level classes FileOutputStream and FileInputStream.
+
+https://www.geeksforgeeks.org/default-methods-java/
+Qus:
+Before Java 8, interfaces could have only abstract methods.
+
+https://www.geeksforgeeks.org/string-vs-stringbuilder-vs-stringbuffer-in-java/
+Ques: String, String builder, StringBuffer
+StringBuilder: J2SE 5 adds a new string class to Java’s already powerful string handling capabilities.
+This new class is called StringBuilder. It is identical to StringBuffer except for one important difference:
+it is not synchronized, which means that it is not thread-safe.
+
+https://www.guru99.com/difference-between-jdk-jre-jvm.html
+https://www.geeksforgeeks.org/differences-jdk-jre-jvm/
+Qus: JVM vs JRE vs JDK
+
+Question: ArrayList vs LinkList
+https://www.javatpoint.com/difference-between-arraylist-and-linkedlist
+
+Question:
+Memory model :
+stack, heap(metadata, string pool)
+
+Question: Can nested non-static classes access type parameters of their enclosing classes?
+Question: Can static nested classes access type parameters defined by the outer class?
