@@ -14,8 +14,9 @@ public class Utils {
     {
         int size = 10;
        // int[][] wrong = new int[][]; // not OK, you must specify 1st dimension
-       int[][] right = new int[size][]; // OK
-
+       //int[][] right = new int[size][]; // OK
+        //Utils obj = new Utils();
+       // obj.isDigit();
         isDigit();
     }
     public static void isDigit()
@@ -27,4 +28,10 @@ public class Utils {
     }
 }
 
+class myclass {
+    myclass() {
+        Utils obj = new Utils();
+        obj.isDigit();
+    }
+}
 

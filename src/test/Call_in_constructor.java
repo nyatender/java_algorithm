@@ -2,11 +2,21 @@ package test;
 
 
 public class Call_in_constructor {
+    public void fun(int a, long b) {
+        System.out.println(" fun ");
+    }
+
+    public void fun(long a, int b) {
+        System.out.println(" fun long int ");
+    }
     public static void main(String[] args) {
-        new Dog();
+
+        Call_in_constructor obj = new Call_in_constructor();
+        //obj.fun(1,1);
     }
 }
 
+/*
 class Animal1 {
 
     public static void something() {
@@ -40,4 +50,4 @@ class Dog extends Animal1 {
     public Dog() {
         super();
     }
-}
+}*/

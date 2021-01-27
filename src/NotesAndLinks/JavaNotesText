@@ -4,7 +4,6 @@ package Grokking_java_interview;
     2. Methods of a class can be overloaded in Java by:
        -> Changing the number of parameters
        -> Changing the type of the parameters passed into the methods
-
     3. There are two levels of access control, the top level and the member level.
     4. There are four accessibility levels in Java.
        -> public
@@ -167,11 +166,32 @@ package Grokking_java_interview;
            //https://stackoverflow.com/questions/10594052/overriding-vs-hiding-java-confused
            Method hiding :
            This is the difference between overrides and hiding,
-
            If both method in parent class and child class are an instance method, it called overrides.
            If both method in parent class and child class are static method, it called hiding.
            One method cant be static in parent and as an instance in the child. and visa versa.
 
+           Why HashTable don't allow null keys:
+            This is because the objects used as keys in a Hashtable implements the hashCode() and equals() methods
+            for their storage and retrieval. Since null is not an object it cannot implement the methods.
+             If you try hashing a null key, it will throw a NullPointerException
+
+          //casting exceptions
+          ArrayList names = new ArrayList();
+          names.add("abcd"); //adding String
+          names.add(1);   //adding Integer
+
+          String name = (String) names.get(0); //OK
+          name = (String) names.get(1); // throw ClassCastException because you can not convert Integer to String
+
+          Read more: https://javarevisited.blogspot.com/2012/12/what-is-type-casting-in-java-class-interface-example.html#ixzz6QauKVJBk
+
+          //string intern
+          store string in string table if not present. To save heap space jvm store string in string pool.
+
+          //Do string in string pool/table is garbage collected ?
+          Yes, all strings in the JVM string pool are eligible for garbage collection if there are no references to them from your program roots.
+          It means that if your interned string went out of scope and there are no other references to it –
+          it will be garbage collected from the JVM string pool.
 
 
 
