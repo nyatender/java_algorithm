@@ -1,4 +1,4 @@
-package algoexpert;
+package algoexpert.Medium;
 import java.util.*;
 
 public class threeNumSum {

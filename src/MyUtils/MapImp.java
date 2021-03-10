@@ -42,5 +42,9 @@ public class MapImp {
             System.out.println(mapElement.getKey() + " : " + mapElement.getValue());
         }
         //================================================================
+
+        //using lamda
+        //================================================================
+        mMap.forEach((k, v) -> System.out.println((k + ":" + v)));
     }
 }

@@ -1,16 +1,25 @@
 package MyUtils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ListImp {
 
+    public static void main(String[] args) {
+        //Heap lowers = new Heap(Heap::MAX_HEAP_FUNC, new ArrayList<Integer>());
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        ArrayList<Integer> arr1 = new ArrayList<>(Arrays.asList(5,3,2,8,4,1));
+        //ArrayList<ArrayList<Integer>> arr2 = new ArrayList<ArrayList<Integer>>(Arrays.asList(5,3,2,8,4,1));
 
+        arr1.sort((a1, b1) -> a1.compareTo(b1));
+        arr1.forEach(item -> System.out.print(item + " "));
+        System.out.println("");
+    }
     //https://howtodoinjava.com/java/collections/arraylist/iterate-through-objects/
     public static void ArrayListTraversal() {
         //==================================================================
+
+
+
         ArrayList<String> arr = new ArrayList<String>() {
             {
                 add("02null20");
@@ -56,5 +65,8 @@ public class ListImp {
         while (it.hasNext())
             System.out.print(it.next() + " ");
         //==================================================================
+
+        //Initialize ArrayList
+        ArrayList<Integer> arrList = new ArrayList<>(Arrays.asList(0, Integer.MAX_VALUE, Integer.MIN_VALUE));
     }
 }
