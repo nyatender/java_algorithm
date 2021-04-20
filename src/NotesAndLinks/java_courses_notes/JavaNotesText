@@ -1,5 +1,5 @@
 package Grokking_java_interview;
-
+https://www.educative.io/courses/java-interview-handbook
     1. Java is pass by value only. Even reference data types are passed by value.
     2. Methods of a class can be overloaded in Java by:
        -> Changing the number of parameters
@@ -192,6 +192,22 @@ package Grokking_java_interview;
           Yes, all strings in the JVM string pool are eligible for garbage collection if there are no references to them from your program roots.
           It means that if your interned string went out of scope and there are no other references to it –
           it will be garbage collected from the JVM string pool.
+
+
+
+          Educative:
+          | Learn Java From Scratch
+          | A Complete Guide to Java Programming
+          Java for Programmers
+          Learn Object-Oriented Programming in Java
+          The Java Interview Handbook: 300+ Interview Questions
+
+          Java revisited:
+
+          GeeksForGeeks:
+
+
+
 
 
 

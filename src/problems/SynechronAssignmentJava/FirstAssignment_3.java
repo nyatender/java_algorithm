@@ -1,4 +1,4 @@
-package SynechronAssignmentJava;
+package problems.SynechronAssignmentJava;
 
 import java.util.LinkedHashSet;
 import java.util.Set;

@@ -6,6 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 public class A_start_algorithm {
+    public static void main(String[] args) {
+
+//        0 0 1 1 1
+//        0 1 1 1 0
+//        0 0 0 0 0
+//        1 0 1 1 1
+//        0 0 0 0 0
+    }
     class Node {
         String id;
         int row;
@@ -167,6 +175,7 @@ public class A_start_algorithm {
         }
         return nodes;
     }
+
     int calculateManhattanDistance(Node currentNode, Node endNode) {
         int currentRow = currentNode.row;
         int currentCol = currentNode.col;

@@ -17,7 +17,14 @@ public class Utils {
        //int[][] right = new int[size][]; // OK
         //Utils obj = new Utils();
        // obj.isDigit();
-        isDigit();
+       // isDigit();
+        String str = "babc";
+//        for(char ch : str.toCharArray())
+//            System.out.println(ch);
+        for(int i = 0; i <= str.length(); i++) {
+            System.out.println(str.substring(i,str.length()));
+        }
+
     }
     public static void isDigit()
     {

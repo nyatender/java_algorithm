@@ -102,6 +102,7 @@ public class AirportConnections {
                     airportGraph, airport, unreachableConnections, visitedAirports);
             airportNode.unreachableConnections = unreachableConnections;
         }
+
     }
 
     public static void depthFirstAddUnreachableConnections(

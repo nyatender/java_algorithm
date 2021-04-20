@@ -1,10 +1,16 @@
 package MyUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class StringOprations {
     public static void main(String args[]) {
         StringOperation();
+        String str = "abcd";
+        int len = str.length();
+        char ch = str.charAt(0);
+        getSubStringsFromString();
     }
 
     //https://www.geeksforgeeks.org/split-string-java-examples/
@@ -57,7 +63,46 @@ public class StringOprations {
         //5) compareTo()
         "Hello".compareTo("Hello");   //0
         "hello".compareTo("Hello");  //32
+    }
 
+    public static void getSubStringsFromString() {
+        ArrayList<String> input = new ArrayList<>() {
+            {
+                add("abcdef");
+                add("abcde");
+                add("1abde");
+                add("abd");
+                add("abc");
+                add("ade");
+                add("ae");
+            }
+        };
 
+        String a;
+        String b;
+        for(String str : input) {
+            for(int i = 0; i < str.length(); i++) {
+                a = str.substring(0, i);
+                b = str.substring(i+1);
+                //str = str.substring(0, i) + str.substring(i + 1, str.length());
+                System.out.println(a+b);
+            }
+        }
+    }
+
+    public void StringBuilderOperations() {
+        StringBuilder sb = new StringBuilder();
+        StringBuilder sb1;
+        Character ch;
+
+        //Character.isSpaceChar()
+        int[] arr = new int[10];
+        Arrays.sort(arr);
+        String val = "123";
+        Integer.valueOf(val);
+        int x = 10;
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(val);
+        Integer.toString(x).length();
     }
 }

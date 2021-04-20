@@ -1,0 +1,38 @@
+
+1: Methods in interface
+  static
+  default
+2: Functional programming
+3: Lamda expression (remove boiler plate code and focus on main thing)
+4: Stream API (to achieve concorrency, funcional programming)
+5: Date API
+
+6:
+interface I {
+    default void show() {
+      sout("interface");
+    }
+}
+class A {
+    void show() {
+      sout("class A");  // high priority over inteface default methods
+    }
+}
+class B extends A implements I {
+}
+
+main() {
+  (new B).show(); // o/p: class A  this is call 3rd rule
+}
+
+7:
+interface I {
+    //this will give you error overriding object method not allowed
+    default boolean equals(object o) {
+        return true;
+    }
+    //
+}
+
+8: internal loops (java 8 faster than external because it define inside the collection)
+   extenal loops (in java 8 and previous)

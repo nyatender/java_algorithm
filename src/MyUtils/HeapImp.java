@@ -5,16 +5,22 @@ import java.util.function.BiFunction;
 
 public class HeapImp {
     public static void main(String[] args) {
-        PriorityQueue minHeap=new PriorityQueue();
-        PriorityQueue maxHeap=new PriorityQueue(10, Collections.reverseOrder());
-    }
-    public class MyComparator implements Comparator<Integer>
-    {
-        public int compare( Integer x, Integer y )
-        {
-            return y - x;
+        PriorityQueue minHeap = new PriorityQueue();
+        PriorityQueue maxHeap = new PriorityQueue(10, Collections.reverseOrder());
+        PriorityQueue<Integer> pq = new PriorityQueue<>((x, y) -> Integer.compare(y, x));
+
+        pq.add(1);
+        pq.add(2);
+        pq.add(3);
+
+        Iterator iterator = pq.iterator();
+        //pq.
+
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + " ");
         }
     }
+
     static class Heap {
         List<Integer> heap = new ArrayList<Integer>();
         BiFunction<Integer, Integer, Boolean> comparisonFunc;

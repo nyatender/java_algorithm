@@ -1,0 +1,149 @@
+
+1: java don't have these feature that call bad practice in other language like c/c++
+pointer not allowed
+operator overloading disabled
+multiple inheritance
+friend functions
+explicit typecasting
+
+2:Data types
+Integer:
+// A short type is a 16 bit signed integer
+short age; // Stores from +32,767 to -32,768
+
+// An int type is a 32 bit signed integer
+int age; // Stores from +2,147,483,647 to -2,147,483,648
+
+// A long type is a 64 bit signed integer
+long age; // Stores from +9,223,372,036,854,775,807 to -9,223,372,036,854,775,808
+
+Floating Points:
+ float radius = 8.56f;
+ double radius = 0.00000000000863872078;
+
+ char ch;
+ boolean b;
+ null
+
+ 3: Taking variable from user
+ import java.util.Scanner;
+ public static void main(String[] args) {
+         Scanner scanner_one = new Scanner(System.in);
+
+         System.out.println("Enter your name: ");
+         String name = scanner_one.nextLine();
+         System.out.println("Your name is: " + name);
+     }
+
+4: print value of data types
+         int int_number = 1000;
+         char char_name = 'N';
+         float float_number = 10.292f;
+         double double_number = 0.00000000000512365123;
+         boolean bool_accept = true;
+
+         System.out.println(String.valueOf(int_number));
+         System.out.println(String.valueOf(float_number));
+         System.out.println(String.valueOf(double_number));
+         System.out.println(String.valueOf(char_name));
+         System.out.println(String.valueOf(bool_accept));
+
+5: Mathematical functions
+        System.out.println("2 raised to the power 3 is " + Math.pow(2, 3));
+        System.out.println("Exponent squared is " + Math.exp(2));
+        System.out.println("The square root of 16 is " + Math.sqrt(16));
+        System.out.println("The cube root of 27 is " + Math.cbrt(27));
+
+6: Logarithms:
+        System.out.println("log of 2 is " + Math.log(2));
+        System.out.println("log to the base 10 of 100 is " + Math.log10(100));
+
+7: Trigonometry:
+        System.out.println("tan(45) =" + Math.tan(Math.toRadians(45)));
+        System.out.println("sin(45) =" + Math.sin(Math.toRadians(45)));
+        System.out.println("cos(45) =" + Math.cos(Math.toRadians(45)));
+
+8: Absolute Values:
+        System.out.println("Absolute value of -2: " + Math.abs(-2));
+        System.out.println("Absolute value of 2: " + Math.abs(2));
+
+9: Max and Minimum:
+        System.out.println("Maximum between 2.04 and 2.05: " + Math.max(2.04, 2.05));
+        System.out.println("Minimum between 2 and 23: " + Math.min(2, 23));
+
+10: Strings are Immutable
+
+11: String concatenation:
+public static void main(String[] args) {
+        String one = "Hello";
+        String two = " World";
+        int number = 10;
+
+        // concatenating two strings
+        System.out.println(one + two);
+
+        //concatenating a number and string
+        System.out.println(one + " " + number);
+
+        //saving concatenated string and printing
+        String new_string = one + two + " " + number;
+        System.out.println(new_string);
+    }
+12: String Comparing
+    public static void main(String[] args) {
+        String one = "Hello";
+        String two = "World";
+        String lower = "hello";
+        String same = "Hello";
+
+        System.out.println(one.equals(two));
+
+        System.out.println(one.equals(lower));
+
+        System.out.println(one.equals(same));
+    }
+13: String Split
+String[] greetings = greet.split(",");
+
+14: SubStrings
+    public static void main(String[] args) {
+        String choice = "CoffeeOrTea";
+        //First: Only one argument
+        System.out.println(choice.substring(8)); by default 2nd argument is end of the String //Tea
+
+        //Second: Two arguments
+        System.out.println(choice.substring(0, 6)); //Coffee
+    }
+15: String Cases
+    //Returns new string in which all characters are converted to upper case
+    System.out.println(greet.toUpperCase());
+
+    //Returns new string in which all characters are converted to lower case
+    System.out.println(greet.toLowerCase());
+
+16: Length
+String str = " abcd "
+int length = str.length()
+
+17: array is pass by ref
+
+18: Copy an Array to others
+        String[] notAMeaningfulSentence = {"My ", "I ", "am ", "not ", "a ", "Robot"};
+        String[] aMeaningfulSentence = java.util.Arrays.copyOfRange(notAMeaningfulSentence, 1, 6);
+
+19:
+        String[] notAMeaningfulSentence = {"My ", "I ", "am ", "not ", "a ", "Robot"};
+        String[] aMeaningfulSentence = new String[5];
+        System.arraycopy(notAMeaningfulSentence, 1, aMeaningfulSentence, 0, 5);
+        for (int i = 0; i<=4; i++){
+            System.out.print(aMeaningfulSentence[i]);
+        }
+
+20: Build in Arrays
+String[] nameColection = {"John", "Bob", "Mary"};
+System.out.println("Does array nameCollection contains this element? "
+        + Arrays.asList(nameColection).contains(2));  //false
+System.out.println("Does array nameCollection contains this element? "
+        + Arrays.asList(nameColection).contains("John")); //true
+
+21:

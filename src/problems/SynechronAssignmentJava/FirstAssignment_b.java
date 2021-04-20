@@ -1,4 +1,4 @@
-package SynechronAssignmentJava;
+package problems.SynechronAssignmentJava;
 
 public class FirstAssignment_b {
     public static void main(String[] args) {

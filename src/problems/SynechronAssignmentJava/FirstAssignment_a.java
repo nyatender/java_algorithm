@@ -1,4 +1,4 @@
-package SynechronAssignmentJava;
+package problems.SynechronAssignmentJava;
 
 import java.util.ArrayList;
 import java.util.List;

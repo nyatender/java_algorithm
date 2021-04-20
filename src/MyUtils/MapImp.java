@@ -27,11 +27,13 @@ public class MapImp {
         System.out.println(hasVal);
         //================================================================
 
-        //================================================================
+        //===============================================================   =
         // using for-each loop for iteration over Map.entrySet()
-        for (Map.Entry<String, String> entry : mMap.entrySet())
+        for (Map.Entry<String, String> entry : mMap.entrySet()) {
             System.out.println("Key = " + entry.getKey() +
                     ", Value = " + entry.getValue());
+
+        }
         //================================================================
 
         //================================================================
@@ -46,5 +48,8 @@ public class MapImp {
         //using lamda
         //================================================================
         mMap.forEach((k, v) -> System.out.println((k + ":" + v)));
+
+        String value = mMap.get("GFG");
+
     }
 }
