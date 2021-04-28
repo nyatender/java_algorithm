@@ -3,10 +3,13 @@ package DesignPatterns;
 public class Singleton {
     private static Singleton instance;
 
-    public  void main(String[] args)
+    public static void main(String[] args)
     {
-        Singleton ins = Singleton.getInstance();
-
+       // Singleton ins = Singleton.getInstance();
+        mySingleton obj1 = mySingleton.mySingleton_INSTANCE;
+        mySingleton obj2 = mySingleton.mySingleton_INSTANCE;
+        if(obj1 == obj2)
+            System.out.println(" Both are Singleton ");
     }
     public static Singleton getInstance()
     {
@@ -67,5 +70,13 @@ class Superman1 {
 
     public void fly() {
         System.out.println("I am flyyyyinggggg ...");
+    }
+}
+
+enum mySingleton {
+    mySingleton_INSTANCE;
+
+    public void fly() {
+        System.out.println("I am in enum class ");
     }
 }

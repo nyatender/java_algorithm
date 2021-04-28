@@ -60,3 +60,30 @@ class IntegerSwap {
         b.val = temp;
     }
 }
+
+class MySingleton {
+    static private MySingleton instance;
+    private MySingleton() {}
+    public static MySingleton getInstance() {
+        if (instance == null) {
+            synchronized (MySingleton.class) {
+                if (instance == null) {
+                    instance = new MySingleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+class MySingletonEnum {
+    enum instance{
+        INSTANCE
+    }
+    static private MySingletonEnum instance;
+    public MySingletonEnum getInstance() {
+            synchronized (instance.class) {
+                instance = new MySingletonEnum();
+            }
+        return instance;
+    }
+}

@@ -2,7 +2,7 @@ package MyUtils;
 
 import java.util.*;
 
-public class ListImp {
+public class    ListImp {
 
     public static void main(String[] args) {
         //Heap lowers = new Heap(Heap::MAX_HEAP_FUNC, new ArrayList<Integer>());

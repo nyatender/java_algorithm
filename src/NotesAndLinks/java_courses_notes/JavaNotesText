@@ -162,6 +162,29 @@ https://www.educative.io/courses/java-interview-handbook
            if only weak references are pointing to it i.e. a weak reference is eagerly collected.
            On the other hand, objects with SoftReference are only collected when the JVM absolutely needs memory.
 
+            59:when finally doen’t call:
+           System.exit()
+           system crash
+
+            60: How to make a class immutable:
+            declare class as final to restrict extend this class
+            make all fields private so that direct access is avoided
+            don't provide setters for variables
+            make all the mutable fields as final so that it can't be reassign
+            Initialise all the fields via constructor performing a deep copy
+            perform cloning of the object in getter to return a copy rather than actual object reference.
+
+            61.Why Hashtable does not allow null keys or values?
+                To successfully store and retrieve objects from a Hashtable(and ConcurrentHashMap), the objects used as
+                keys must implement the hashCode method and the equals method.
+                Since null isn't an object, you can't call .equals() or .hashCode() on it, so the Hashtable can't compute
+                a hash to use it as a key.
+                For HashMap, it allows one null key and there is a null check for keys, if the key is null then that element
+                will be stored in a zero location in Entry array.
+                We cannot have more than one Null key in HashMap because Keys are unique therefor only one Null key and many
+                 Null values are allowed.
+
+                USE - Null key we can use for some default value.
 
            //https://stackoverflow.com/questions/10594052/overriding-vs-hiding-java-confused
            Method hiding :

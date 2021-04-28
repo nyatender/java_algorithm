@@ -1,3 +1,4 @@
+/*
 package MyUtils;
 
 import java.util.Arrays;
@@ -6,7 +7,6 @@ import java.util.*;
 public class ArrayUtil {
     public static void main(String[] args) {
         abc b = new abc();
-       // b.
     }
     static class abc {
         {
@@ -77,3 +77,4 @@ public class ArrayUtil {
             System.out.print(obj + " ");
     }
 }
+*/
