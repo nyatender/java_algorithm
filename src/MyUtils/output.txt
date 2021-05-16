@@ -1,0 +1,3 @@
+
+Hi this is iput file for file stream.
+just another line.

@@ -16,6 +16,20 @@ At least you should know that :
 ->poll() vs remove() method of Queue interface
   If Queue is empty() then a call to remove() method will throw Exception
   while a call to poll() method returns null.
+-> poll() vs take()
+    https://stackoverflow.com/questions/23379623/java-blockingqueue-take-vs-poll
+    the thread that initially calls take() goes to sleep if there is no element available,
+    letting other threads do whatever they need to do
+-> offer vs add
+   difference is in the contract, that when element can not be added to collection
+   the add method throws an exception and offer doesn't.
+    https://stackoverflow.com/questions/2703984/what-is-the-difference-between-the-add-and-offer-methods-in-a-queue-in-java
+    public boolean add(E e) {
+        if (offer(e))
+            return true;
+        else
+            throw new IllegalStateException("Queue full");
+    }
 
 ->Fail-fast iterator traverse over original collection class while fail-safe iterator
   traverse over a copy or view of original collection.

@@ -3,8 +3,8 @@
   static
   default
 2: Functional programming
-3: Lamda expression (remove boiler plate code and focus on main thing)
-4: Stream API (to achieve concorrency, funcional programming)
+3: Lambda expression (remove boiler plate code and focus on main thing)
+4: Stream API (to achieve concurrency, functional programming)
 5: Date API
 
 6:

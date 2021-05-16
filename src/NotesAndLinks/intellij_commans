@@ -9,14 +9,16 @@ Intelija :
 Alt + insert           //To get constructor pop up
 sout + Tab             //System.out.println();
 
-ctlr + shift + '/'    //block comment
-cltr + '/'            //Line comment
+Ctr + shift + '/'    //block comment
+Ctr + '/'            //Line comment
 
-cltr + '+' + '/'      //uncomment the code
+Ctr + '+' + '/'      //uncomment the code
 
-cltr + D            // Duplicate block or line
+Ctr + D            // Duplicate block or line
 
 Tab                 // To move between template fields.
+
+Ctr + Alt + left Arrow key     //Move back
 
 Open up Settings    // Alt + Ctrl + S
 

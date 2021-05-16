@@ -2,6 +2,7 @@ package MyUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class StringOprations {
@@ -34,6 +35,11 @@ public class StringOprations {
 
         for (String a : arrOfStr)
             System.out.println(a);
+
+        //Convert char to string
+        List<String> list = new ArrayList<>();
+        char ch = 'c';
+        list.add(String.valueOf(ch));
     }
 
     /*https://www.educative.io/edpresso/various-string-comparison-methods-in-java?aid=5082902844932096&utm_source=google&utm_medium=cpc&utm_campaign=edpresso-dynamic&gclid=Cj0KCQiAmL-ABhDFARIsAKywVae8aJ4wmOVjbwESs0Yb8E7MhmW8plc2y-m0fbk_f-1WRwisYjJ1hcsaAm5NEALw_wcB

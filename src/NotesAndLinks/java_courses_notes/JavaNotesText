@@ -58,115 +58,115 @@ https://www.educative.io/courses/java-interview-handbook
             or even if it is called, is uncertain. Therefore, you should not rely on this method to do your cleanup for you.
             For example, if you don't close file descriptors in your code after performing I/O and
             you expect finalize() to close them for you, you may run out of file descriptors.
-        14.a default no-argument constructor is provided by the compiler.
+        14. a default no-argument constructor is provided by the compiler.
         15. Can we change the contents of a final array as in the code snippet below?
             final int[] array = new int[5];
             array[0] = 1;   // compile
 
             final int[] array = new int[5];
             array = new int[10]; // not compile
-         16.A static initialization block is a normal block of code enclosed in braces, { }, and preceded by the static keyword.
+        16.A static initialization block is a normal block of code enclosed in braces, { }, and preceded by the static keyword.
             It can be used to initialize static fields of a class.
-         17.The Java compiler copies initializer blocks into every constructor.
+        17.The Java compiler copies initializer blocks into every constructor.
             Therefore, this approach can be used to share a block of code between multiple constructors.
-         18.The java.lang.Object class is the super class of all classes in Java.
-         19.primary purpose of nested classes is logically grouping related classes in one place and improving encapsulation.
+        18.The java.lang.Object class is the super class of all classes in Java.
+        19.primary purpose of nested classes is logically grouping related classes in one place and improving encapsulation.
             Static Nested Class
             Non-Static Nested Class or Inner Class. The following classes are also considered inner classes.
             Local Class
             Anonymous Class
-         20. A class that is defined in a block is called a local class.
+        20. A class that is defined in a block is called a local class.
              A block is a group of zero or more statements between balanced braces.
-         21.An anonymous class is like a local class except they don't have a name and
+        21.An anonymous class is like a local class except they don't have a name and
              should be used in place of a local class when the intended use is only one time.
-         22.If a class includes abstract methods, then the class itself must be declared abstract.
-         23.A class marked final can't be extended or inherited from.
+        22.If a class includes abstract methods, then the class itself must be declared abstract.
+        23.A class marked final can't be extended or inherited from.
             final class DontExtendMe {
             }
             // Compile time error
             class WontCompile extends DontExtendMe {
             }
-         24.You may want to make a class final if it is not designed for inheritance or
+        24.You may want to make a class final if it is not designed for inheritance or
             you want to forbid any changes by subclassing.
-         25.The finalize() method is a protected and non-static method of the java.lang.Object class
+        25.The finalize() method is a protected and non-static method of the java.lang.Object class
             The finalize() method is invoked by the JVM when an object is garbage collected.
 
-         26. interface can only have variables that are final and static by default.
+        26. interface can only have variables that are final and static by default.
              interface can have static, abstract, or default methods.
              interface all methods and constants are public.
              A class can only extend another class, but it can implement multiple interfaces. Similarly,
              an interface can extend multiple interfaces. An interface never implements a class or an interface.
-         27. Use an interface if you expect unrelated classes would implement your interface.
+        27. Use an interface if you expect unrelated classes would implement your interface.
              For example, the interfaces Comparable and Cloneable are implemented by many unrelated classes.
              Interfaces are also used in instances where multiple inheritance of type is desired.
              Lastly, use an interface if you want to specify the behavior of a certain type but aren't concerned
              who implements the behavior.
-         28.An interface may have no methods at all. Such an interface can be useful to refer to objects of
+        28.An interface may have no methods at all. Such an interface can be useful to refer to objects of
             a bunch of classes that are related and implement the empty interface.
             Such interfaces are also called marker interfaces.
-         29.A functional interface is an interface that contains only one abstract method.
-         30.What is the difference between Comparable interface and Comparator interface?
-         31.Lambda expressions allow us to pass code as data or functionality as a method argument.
+        29.A functional interface is an interface that contains only one abstract method.
+        30.What is the difference between Comparable interface and Comparator interface?
+        31.Lambda expressions allow us to pass code as data or functionality as a method argument.
            Lambda expressions can be used to replace writing anonymous classes, when the class implements a functional interface.
            A functional interface has only a single abstract method and may have default or static methods.
-         32.We can capture the local variables in the enclosing scope of the lambda expression as we have done in the
+        32.We can capture the local variables in the enclosing scope of the lambda expression as we have done in the
             example with the variable i.
             The restriction is however that i should be either final or effectively final.
-             If you try to change the value of i after defining the lambda, you'll get a compile error
-         33.Generics in Java were released with J2SE 1.5 in 2004. Later on, J2SE 1.5 was renamed to Java SE 5.0.
-         34.Type safety is the extent to which a programming language discourages or prevents type errors.
-         35.A generic type is a generic class or interface that is parameterized over types.
+            If you try to change the value of i after defining the lambda, you'll get a compile error.
+        33.Generics in Java were released with J2SE 1.5 in 2004. Later on, J2SE 1.5 was renamed to Java SE 5.0.
+        34.Type safety is the extent to which a programming language discourages or prevents type errors.
+        35.A generic type is a generic class or interface that is parameterized over types.
             For instance, the LinkedList<E> class in java is a generic class.
-         36.The E in the generic class LinkedList<E> is called a type parameter.
-         37.The scope of the type variable is local to the method itself.
+        36.The E in the generic class LinkedList<E> is called a type parameter.
+        37.The scope of the type variable is local to the method itself.
             it may appear in the method signature and the method body, but not outside the method.
             A generic method can appear in a class which itself is not generic.
             we don't specify the type which is automatically inferred by the compiler. A feature known as type inference.
-         38.Note, generics classes or interfaces can't be parameterized over primitive types.
-         39.Also note that for a parametrized outer class we don't need to specify the parameter type when
+        38.Note, generics classes or interfaces can't be parameterized over primitive types.
+        39.Also note that for a parametrized outer class we don't need to specify the parameter type when
             accessing the static members from outside the outer class e.g. OuterClass<Integer>.InnerClass or
             OuterClass<String>.InnerClass are all invalid and compile time errors.
             Simply, OuterClass.InnerClass is good enough when accessing from outside the outer class and OuterClass.<T>InnerClass
             when accessing within the outer class.
-          40.Arrays are covariant, meaning we can cast an array of a subtype to its super type but not vice versa.
-          41.Arrays being covariant imply two things:
+        40.Arrays are covariant, meaning we can cast an array of a subtype to its super type but not vice versa.
+        41.Arrays being covariant imply two things:
             An array of type T[] may contain elements of type T and its subtypes.
             An array of type S[] is a subtype of T[] if S is a subtype of T.
 
-          50.All stateless objects and their corresponding classes are thread-safe.
+        50.All stateless objects and their corresponding classes are thread-safe.
              Since the actions of a thread accessing a stateless object can't affect
              the correctness of operations in other threads, stateless objects are thread-safe.
-          51.A mutex is owned by the thread acquiring it, till the point, it releases it,
+        51.A mutex is owned by the thread acquiring it, till the point, it releases it,
              whereas for a semaphore there's no notion of ownership.
-          52.In the Java programming language there's no mutex but something called a monitor
+        52.In the Java programming language there's no mutex but something called a monitor
              which can be thought of as a mutex with bells and whistles.
-          53.When we use synchronized in an instance method signature we are in reality acquiring the monitor associated with the object.
+        53.When we use synchronized in an instance method signature we are in reality acquiring the monitor associated with the object.
           When we use synchronized in a static method signature we are acquire the monitor associated with the class object.
-          54.For static methods, the monitor will be the class object,which is distinct from the monitor of each instance of the same class.
+        54.For static methods, the monitor will be the class object,which is distinct from the monitor of each instance of the same class.
              If an uncaught exception occurs in a synchronized method, the monitor is still released.
              Furthermore, synchronized blocks can be re-entered that is they are reentrant.
-           54.If there's a single thread that writes to the volatile variable and other threads only read the volatile variable then
+        54.If there's a single thread that writes to the volatile variable and other threads only read the volatile variable then
             just using volatile is enough, however, if there's a possibility of multiple threads writing to the volatile variable
              then synchronized would be required to ensure atomic writes to the variable.
-           56.The String literal isn't allocated on the heap rather it lives in a special area called the String pool.
+        56.The String literal isn't allocated on the heap rather it lives in a special area called the String pool.
             The String pool consists of string literals that can reused and aren't removed from the pool even when there
             may be no reference to them. Therefore, if you run the same program initializing the str variable with a string literal,
              the print message would be different.
-           57.reference types in Java:
+        57.reference types in Java:
                  Strong Reference
                  Weak Reference
                  Soft Reference
                  Phantom Reference
-           57.Java guarantees that all soft referenced objects are cleaned up before it throws an OutOfMemoryError.
-           58.The difference between WeakReference and SoftReference is that the Garbage collector can collect an object
+        57.Java guarantees that all soft referenced objects are cleaned up before it throws an OutOfMemoryError.
+        58.The difference between WeakReference and SoftReference is that the Garbage collector can collect an object
            if only weak references are pointing to it i.e. a weak reference is eagerly collected.
            On the other hand, objects with SoftReference are only collected when the JVM absolutely needs memory.
 
-            59:when finally doen’t call:
+        59:when finally doesn't call:
            System.exit()
            system crash
 
-            60: How to make a class immutable:
+        60: How to make a class immutable:
             declare class as final to restrict extend this class
             make all fields private so that direct access is avoided
             don't provide setters for variables
@@ -174,31 +174,32 @@ https://www.educative.io/courses/java-interview-handbook
             Initialise all the fields via constructor performing a deep copy
             perform cloning of the object in getter to return a copy rather than actual object reference.
 
-            61.Why Hashtable does not allow null keys or values?
-                To successfully store and retrieve objects from a Hashtable(and ConcurrentHashMap), the objects used as
-                keys must implement the hashCode method and the equals method.
-                Since null isn't an object, you can't call .equals() or .hashCode() on it, so the Hashtable can't compute
-                a hash to use it as a key.
-                For HashMap, it allows one null key and there is a null check for keys, if the key is null then that element
-                will be stored in a zero location in Entry array.
-                We cannot have more than one Null key in HashMap because Keys are unique therefor only one Null key and many
-                 Null values are allowed.
+        61.Why Hashtable does not allow null keys or values?
+            To successfully store and retrieve objects from a Hashtable(and ConcurrentHashMap), the objects used as
+            keys must implement the hashCode method and the equals method.
+            Since null isn't an object, you can't call .equals() or .hashCode() on it, so the Hashtable can't compute
+            a hash to use it as a key.
 
-                USE - Null key we can use for some default value.
+            For HashMap, it allows one null key and there is a null check for keys, if the key is null then that element
+            will be stored in a zero location in Entry array.
+            We cannot have more than one Null key in HashMap because Keys are unique therefore only one Null key and many
+             Null values are allowed.
+
+            USE - Null key we can use for some default value.
 
            //https://stackoverflow.com/questions/10594052/overriding-vs-hiding-java-confused
-           Method hiding :
+        62. Method hiding :
            This is the difference between overrides and hiding,
            If both method in parent class and child class are an instance method, it called overrides.
            If both method in parent class and child class are static method, it called hiding.
-           One method cant be static in parent and as an instance in the child. and visa versa.
+           One method cannot be static in parent and as an instance in the child. and visa versa.
 
            Why HashTable don't allow null keys:
             This is because the objects used as keys in a Hashtable implements the hashCode() and equals() methods
             for their storage and retrieval. Since null is not an object it cannot implement the methods.
              If you try hashing a null key, it will throw a NullPointerException
 
-          //casting exceptions
+        63.//casting exceptions
           ArrayList names = new ArrayList();
           names.add("abcd"); //adding String
           names.add(1);   //adding Integer
@@ -211,13 +212,92 @@ https://www.educative.io/courses/java-interview-handbook
           //string intern
           store string in string table if not present. To save heap space jvm store string in string pool.
 
-          //Do string in string pool/table is garbage collected ?
-          Yes, all strings in the JVM string pool are eligible for garbage collection if there are no references to them from your program roots.
+        64.Do string in string pool/table is garbage collected ?
+          //https://stackoverflow.com/questions/18406703/when-will-a-string-be-garbage-collected-in-java
+          First, it is only string literals (see notes) that get automatically interned / added to the string pool.
+          String objects that are created by an application at runtime are not interned ...
+          unless your application explicitly calls String.intern()
+          String objects which are in the string pool will not be garbage collected.
+          Other String objects will be garbage collected if you don't have reference to it in your program execution.
+
           It means that if your interned string went out of scope and there are no other references to it –
           it will be garbage collected from the JVM string pool.
 
+        65. ClassLoader in java:
+        ClassLoader in Java is a class that is used to load class files in Java. Java code is compiled into a class file
+         by javac compiler and JVM executes Java program, by executing byte codes written in the class file.
+         ClassLoader is responsible for loading class files from file systems, networks, or any other source.
 
+        Read more: https://javarevisited.blogspot.com/2012/12/how-classloader-works-in-java.html#ixzz6u4KKo8El
+        ClassLoader in Java works on three principles: delegation, visibility, and uniqueness.
+        Delegation principle -> forward request of class loading to parent class loader and only loads the class if the
+                    parent is not able to find or load the class
+        Visibility principle -> allows child class loader to see all the classes loaded by parent ClassLoader,
+                    but parent class loader can not see classes loaded by a child
+        Uniqueness principle -> allows one to load a class exactly once, which is basically achieved by delegation and
+                    ensures that child ClassLoader doesn't reload the class already loaded by a parent.
 
+        There is three default class loader used in Java, Bootstrap, Extension, and System or Application class loader.
+
+        Read more: https://javarevisited.blogspot.com/2012/12/how-classloader-works-in-java.html#ixzz6u4Gg6xFc
+
+        66. NoClassDefFoundError vs ClassNotFoundException
+        ClassNotFoundException which comes while trying to load a class at run-time only and the name was provided during
+        runtime, not at compile-time. Many Java developer mingles this two Error and gets confused.
+
+        Read more: https://javarevisited.blogspot.com/2011/06/noclassdeffounderror-exception-in.html#ixzz6u4H7KAHt
+
+        NoClassDefFoundError in Java comes when Java Virtual Machine is not able to find a particular class at runtime
+        which was available at compile time. For example, if we have a method call from a class or accessing any static member
+         of a Class and that class is not available during run-time then JVM will throw NoClassDefFoundError.
+
+         67. How to load class explicitly in Java
+         Java provides API to explicitly load a class by
+         Class.forName(classname)
+         Class.forName(classname, initialized, classloader)
+
+         68.Shallow and Deep copy
+         https://www.geeksforgeeks.org/clone-method-in-java-2/
+
+         69. Lambda vs Method reference. Which is better
+         Read more: https://javarevisited.blogspot.com/2012/12/how-classloader-works-in-java.html#ixzz6u4QF5Ft9
+
+         70.How hashmap works in java
+         https://javarevisited.blogspot.com/2011/02/how-hashmap-works-in-java.html#axzz6u97GLzYX
+
+         71.top Java collections interview questions
+         https://javarevisited.blogspot.com/2017/08/top-10-java-concurrenthashmap-interview.html#more
+
+         72.How many type serialization in java
+         Binary
+         XML
+
+         73.find 2nd largest in list using stream
+                 ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1,2,3,4));
+                 Optional<Integer> result = arr.stream().sorted(Comparator.reverseOrder()).limit(2).skip(1).findFirst();
+                 System.out.println(result.get());
+
+         74. Throughput vs Latency
+         Throughput is defined as the rate of doing work or how much work gets done per unit of time.
+         Latency is time required to complete a task or produce a result.
+
+         75. What is liveness
+         Ability of a program or an application to execute in a timely manner is called liveness.
+         If a program experiences a deadlock then it's not exhibiting liveness.
+
+         76. live-lock
+         A live-lock occurs when two threads continuously react in response to the actions by the other thread without
+          making any real progress
+
+         77.How to debug multithreaded application
+
+         78.How to remote debug
+            https://www.baeldung.com/intellij-remote-debugging
+
+         79.How to pass arguments to the java application
+            If you are using intellij go to Run > Edit Configurations menu setting. A dialog box will appear.
+            Now you can add arguments to the Program arguments input field.
+        Read more: https://javarevisited.blogspot.com/2011/06/noclassdeffounderror-exception-in.html#ixzz6u4Ku2oS1
           Educative:
           | Learn Java From Scratch
           | A Complete Guide to Java Programming

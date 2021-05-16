@@ -15,6 +15,5 @@ Elastic #
 Asynchronous communication #
     The system uses asynchronous communication (message-driven).
 
-
 Spring cloud #
 Spring Cloud is a collection of extensions for Spring Boot which are useful for cloud applications and for microservices.

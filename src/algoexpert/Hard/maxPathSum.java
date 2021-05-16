@@ -1,6 +1,18 @@
 package algoexpert.Hard;
 
 public class maxPathSum {
+    static class BinaryTree {
+        public int value;
+        public BinaryTree left;
+        public BinaryTree right;
+
+        public BinaryTree(int value) {
+            this.value = value;
+            this.left = null;
+            this.right = null;
+        }
+    }
+
     public static void main(String[] args) {
         BinaryTree root = new BinaryTree(1  );
         root.left = new BinaryTree(2);
@@ -41,6 +53,7 @@ public class maxPathSum {
         if(tree.right != null) {
             rightMax = maxPathSumCal(tree.right, maxSumSubTree, maxSumOfPath);
             maxSumOfPath.val = Math.max(maxSumOfPath.val, rightMax);
+
         }
 
         maxSumOfPath.val = maxSumOfPath.val + tree.value;
@@ -50,15 +63,4 @@ public class maxPathSum {
         return maxSumOfPath.val;
     }
 
-    static class BinaryTree {
-        public int value;
-        public BinaryTree left;
-        public BinaryTree right;
-
-        public BinaryTree(int value) {
-            this.value = value;
-            this.left = null;
-            this.right = null;
-        }
-    }
 }

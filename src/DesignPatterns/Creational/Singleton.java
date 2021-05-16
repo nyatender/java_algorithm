@@ -1,7 +1,9 @@
-package DesignPatterns;
+package DesignPatterns.Creational;
+
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Singleton {
-    private static Singleton instance;
+    private static volatile Singleton instance;
 
     public static void main(String[] args)
     {
@@ -78,5 +80,34 @@ enum mySingleton {
 
     public void fly() {
         System.out.println("I am in enum class ");
+    }
+}
+
+class SingletonThreadSafeLoadBalance {
+    private SingletonThreadSafeLoadBalance() {}
+
+    static private ReentrantLock lock = new ReentrantLock();
+    static  private boolean count = false;
+
+    private static class SingletonHolder {
+        private static final Singleton INSTANCE1 = new Singleton();
+        private static final Singleton INSTANCE2 = new Singleton();
+
+    }
+
+    public static Singleton getInstance() {
+
+        lock.lock();
+
+        if(count == false) {
+            count = true;
+            lock.unlock();
+            return SingletonHolder.INSTANCE1;
+        }
+        else {
+            count = false;
+            lock.unlock();
+            return SingletonHolder.INSTANCE2;
+        }
     }
 }

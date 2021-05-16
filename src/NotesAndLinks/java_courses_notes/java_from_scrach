@@ -129,7 +129,7 @@ int length = str.length()
 
 18: Copy an Array to others
         String[] notAMeaningfulSentence = {"My ", "I ", "am ", "not ", "a ", "Robot"};
-        String[] aMeaningfulSentence = java.util.Arrays.copyOfRange(notAMeaningfulSentence, 1, 6);
+        String[] aMeaningfulSentence = Arrays.copyOfRange(notAMeaningfulSentence, 1, 6);
 
 19:
         String[] notAMeaningfulSentence = {"My ", "I ", "am ", "not ", "a ", "Robot"};

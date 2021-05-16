@@ -25,5 +25,6 @@ public class passingMethods {
         String str = "YaT";
         MyPrinter obj = new MyPrinter();
         obj.print(str, stringParser::convert);
+
     }
 }

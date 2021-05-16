@@ -1,4 +1,4 @@
-package algoexpert.Hard;
+package algoexpert.veryHard;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,11 +8,18 @@ import java.util.Map;
 public class A_start_algorithm {
     public static void main(String[] args) {
 
-//        0 0 1 1 1
-//        0 1 1 1 0
-//        0 0 0 0 0
-//        1 0 1 1 1
-//        0 0 0 0 0
+        int[][] graph = {
+                {0, 0, 1, 1, 1},
+                {0, 1, 1, 1, 0},
+                {0, 0, 0, 0, 0},
+                {1, 0, 1, 1, 1},
+                {0, 0, 0, 0, 0}
+        };
+        int startRow = 0;
+        int startColumn = 1;
+        int endRow = 4;
+        int endColumn = 3;
+        int[][] results = (new A_start_algorithm()).aStarAlgorithm(startRow, startColumn, endRow, endColumn, graph);
     }
     class Node {
         String id;
