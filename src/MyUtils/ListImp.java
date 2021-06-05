@@ -29,6 +29,14 @@ public class    ListImp {
         for(int i = 0; i < pair.size(); i++)
             System.out.println(pair.get(i)[0] + " " + pair.get(i)[1]);
     }
+
+    static void SortA_ArrayList_Of_Integer() {
+        //Sort a arrayList of Integer
+        ArrayList<ArrayList<Integer>> times = new ArrayList<>();
+        times.add(new ArrayList<>(Arrays.asList(30, 10, 20)));
+        Collections.sort(times, (a, b) -> Integer.compare(a.get(0), b.get(0)));
+    }
+
     //https://howtodoinjava.com/java/collections/arraylist/iterate-through-objects/
     public static void ArrayListTraversal() {
         //==================================================================

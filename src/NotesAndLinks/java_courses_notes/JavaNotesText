@@ -225,8 +225,8 @@ https://www.educative.io/courses/java-interview-handbook
 
         65. ClassLoader in java:
         ClassLoader in Java is a class that is used to load class files in Java. Java code is compiled into a class file
-         by javac compiler and JVM executes Java program, by executing byte codes written in the class file.
-         ClassLoader is responsible for loading class files from file systems, networks, or any other source.
+        by javac compiler and JVM executes Java program, by executing byte codes written in the class file.
+        ClassLoader is responsible for loading class files from file systems, networks, or any other source.
 
         Read more: https://javarevisited.blogspot.com/2012/12/how-classloader-works-in-java.html#ixzz6u4KKo8El
         ClassLoader in Java works on three principles: delegation, visibility, and uniqueness.
@@ -297,6 +297,26 @@ https://www.educative.io/courses/java-interview-handbook
          79.How to pass arguments to the java application
             If you are using intellij go to Run > Edit Configurations menu setting. A dialog box will appear.
             Now you can add arguments to the Program arguments input field.
+
+         80. Which Package is Imported by Default in Java?
+         java.lang
+
+         81.what is try-with-resources in java
+            release the resource in finally block
+
+         82.Can we overload main method?
+            yes, its a static overload
+
+         83.What is difference between path and classpath variables?
+         path variable have java library path in operating system
+         classpath is the path of source code for compiler
+
+         difference between message Queue and Kafaka
+         https://hackernoon.com/a-super-quick-comparison-between-kafka-and-message-queues-e69742d855a8
+
+         84.Fork-join framework
+         https://www.pluralsight.com/guides/introduction-to-the-fork-join-framework
+
         Read more: https://javarevisited.blogspot.com/2011/06/noclassdeffounderror-exception-in.html#ixzz6u4Ku2oS1
           Educative:
           | Learn Java From Scratch

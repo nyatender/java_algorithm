@@ -1,10 +1,30 @@
 package test;
 
-import java.util.Arrays;
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.*;
 
 public class graph {
     public static void main(String[] args) {
-        int val = Integer.MAX_VALUE;
+
+       // int val = Integer.MAX_VALUE;
+
+        Set<Long> keys = new HashSet<Long>();
+        Long[] val1 = {12L,11L,12L,11L,14L};
+        Map<Long, Set<Long>> mMap = new HashMap<>();
+        for(int i = 0; i < val1.length; i++) {
+            if(!mMap.containsKey(val1[i])) {
+                Set<Long> val = new HashSet<Long>();
+                val.add(val1[i]);
+                mMap.put(val1[i], val);
+            }
+            else {
+                mMap.get(val1[i]).add(val1[i]+10);
+//                Set<Long> v = mMap.get(val1[i])
+//                v.add(val1[i]);
+            }
+        }
+        mMap.forEach((k, v) -> System.out.println(k + " " + v));
     }
 
     public static int getMinVal(int[] maxVal, boolean[] visited) {

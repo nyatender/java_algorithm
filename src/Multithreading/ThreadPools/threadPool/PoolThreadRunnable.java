@@ -1,4 +1,4 @@
-package threadPoolImp;
+package Multithreading.ThreadPools.threadPool;
 
 import java.util.concurrent.BlockingQueue;
 

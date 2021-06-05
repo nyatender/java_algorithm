@@ -112,7 +112,7 @@ String[] greetings = greet.split(",");
         System.out.println(choice.substring(8)); by default 2nd argument is end of the String //Tea
 
         //Second: Two arguments
-        System.out.println(choice.substring(0, 6)); //Coffee
+        System.out.println(choice.substring(0, 6)); //Coffee. excluding 2nd index
     }
 15: String Cases
     //Returns new string in which all characters are converted to upper case

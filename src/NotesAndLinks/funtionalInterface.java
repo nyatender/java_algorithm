@@ -9,10 +9,10 @@ import java.util.Date;
 public class funtionalInterface {
     public static void main(String[] args) {
 
-        predicates();
+      //  predicates();
         functions();
-        consumers();
-        suppliers();
+        //consumers();
+       // suppliers();
     }
 
     public static void predicates() {

@@ -1,5 +1,7 @@
 package NotesAndLinks;
 
+import java.util.*;
+
 class employee implements Cloneable {
     private int age;
     private String name;
@@ -56,5 +58,19 @@ public class testCode {
         e1.setAge(40);
         System.out.println(" e1 : " + e1);
         System.out.println(" e2 : " + e3);
+
+        HashMap<Integer, Integer> hMap = new HashMap<>();
+        ArrayList<Map.Entry<Integer, Integer>> Arr = new ArrayList<>();
+
+        for(Map.Entry<Integer, Integer> entry : hMap.entrySet()) {
+            Arr.add(entry);
+        }
+
+        Collections.sort(Arr, (i, j) -> i.getValue().compareTo(j.getValue()));
+        LinkedHashMap<Integer, Integer> result = new LinkedHashMap<>();
+        for(int i = 0; i < Arr.size(); i++) {
+            result.put(Arr.get(i).getKey(), Arr.get(i).getValue());
+        }
+
     }
 }

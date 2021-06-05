@@ -69,6 +69,47 @@ public class Graph {
 		DFSUtils(v, visited);	
 		
 	}
+
+	void BFS1(int start) {
+		boolean[] visited = new boolean[V];
+
+		LinkedList<Integer> queue = new LinkedList<>();
+		queue.add(start);
+		while(!queue.isEmpty()) {
+
+			int nextVal = queue.poll();
+			System.out.println( " visited " + nextVal);
+			visited[nextVal] = true;
+
+			for(int i = 0; i < adj[nextVal].size(); i++) {
+				int edge = adj[nextVal].get(i);
+				if(!visited[edge]) {
+					queue.add(edge);
+				}
+			}
+		}
+	}
+
+	void DFSUtils1(int i, boolean[] visited) {
+		for(int u = 0; u < adj[i].size(); u++) {
+			int index = adj[i].get(u);
+			if(!visited[index]) {
+				System.out.println(" visited " + index);
+				visited[index] = true;
+				DFSUtils1(index, visited);
+			}
+		}
+	}
+
+	void DFS1(int start) {
+		boolean[] visited = new boolean[V];
+//		for(int i = start; i < adj.length; i++) {
+//			if(!visited[i]) {
+				DFSUtils1(start, visited);
+		//	}
+		//}
+
+	}
 	
 	public static void main(String[] args) {
 		

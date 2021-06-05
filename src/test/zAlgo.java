@@ -1,10 +1,12 @@
 package test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class zAlgo {
     public static void main(String[] args) {
-
+// non-empty immutable set
+        List<String> list = List.of("Geeks", "For", "Geeks");
     }
 
     void kpm(String text, String pattern) {

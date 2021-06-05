@@ -1,4 +1,4 @@
-
+package Multithreading;
 
 class PrintNumberSeries {
     int n;
