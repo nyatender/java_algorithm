@@ -2,10 +2,15 @@ package algoexpert.veryHard;
 
 import java.util.Arrays;
 
+/*
+ * Partitioning the string into palindromes.
+         *
+         * https://leetcode.com/problems/palindrome-partitioning/
+         * https://leetcode.com/problems/palindrome-partitioning-ii/
+ */
 public class miniNumberOfPalimdromicPartitions {
     public static int palindromePartitioningMinCuts(String str) {
         // Write your code here.
-
         boolean[][] table = new boolean[str.length()][str.length()];
 
         for(int i = 0; i < str.length(); i++) {
@@ -29,35 +34,6 @@ public class miniNumberOfPalimdromicPartitions {
         }
 
         return cuts[str.length()-1];
-    }
-    public static int palindromePartitioningMinCutsDP(String str) {
-        // Write your code here.
-        int[][] dp = new int[str.length()][str.length()];
-
-        //minimum for len
-        for(int i = 0; i< str.length(); i++) {
-            dp[i][i] = 0;
-        }
-
-        for(int l = 1; l < dp.length - 1; l++) {
-            for(int i = 0; i < dp.length - l - 1; i++) {
-                for(int j = i; j < i+l; j++)
-                if(isPalindrome(str, i, j)) {
-                    dp[i][j] = 0;
-                }
-                else {
-                    int minCut = Integer.MAX_VALUE;
-                    for(int k = i; k < j; k++) {
-                        if(dp[i][k] + dp[k+1][j] < minCut)
-                            minCut = dp[i][k] + dp[k+1][j];
-                    }
-                    dp[i][j] = 1+ minCut;
-                }
-            }
-        }
-
-
-        return dp[0][str.length()-1];
     }
     static boolean isPalindrome(String str, int s, int e) {
         if(s >= e)
