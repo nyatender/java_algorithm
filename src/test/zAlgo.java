@@ -7,8 +7,33 @@ public class zAlgo {
     public static void main(String[] args) {
 // non-empty immutable set
         List<String> list = List.of("Geeks", "For", "Geeks");
-    }
+        int n = 5;
 
+        int[] dp = new int[n];
+        dp[0] = 0;
+        dp[1] = 1;
+
+        getNoOfConfigurations(n, dp);
+
+    }
+    public static int getNoOfConfigurations(int n, int[] dp) {
+        if(n == 0)
+            return 0;
+
+        if(dp[n] != 0)
+            return dp[n];
+
+        int sum = 0;
+        for(int i = 1; i < n; i++) {
+            if(dp[i] == 0)
+                dp[i] = getNoOfConfigurations(i, dp);
+            if(dp[n-i] == 0)
+                dp[n-i] = getNoOfConfigurations(n-i, dp);
+            sum += dp[i] + dp[n-i];
+        }
+        dp[n] = sum;
+        return dp[n];
+    }
     void kpm(String text, String pattern) {
 
         int[] zArr = new int[pattern.length()];

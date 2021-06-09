@@ -46,22 +46,28 @@ public class interleavingStrings {
         return areInterwoven(one, two, three, 0, 0, cache);
     }
 
-    public static boolean areInterwoven(
-            String one, String two, String three, int i, int j, Boolean[][] cache) {
-        if (cache[i][j] != null) return cache[i][j];
+    public static boolean areInterwoven(String one, String two, String three,
+                                        int i, int j, Boolean[][] cache) {
+        if (cache[i][j] != null)
+            return cache[i][j];
+
         int k = i + j;
         if (k == three.length()) {
             return true;
         }
+
         if (i < one.length() && one.charAt(i) == three.charAt(k)) {
             cache[i][j] = areInterwoven(one, two, three, i + 1, j, cache);
-            if (cache[i][j]) return true;
+            if (cache[i][j])
+                return true;
         }
+
         if (j < two.length() && two.charAt(j) == three.charAt(k)) {
             var result = areInterwoven(one, two, three, i, j + 1, cache);
             cache[i][j] = result;
             return result;
         }
+
         cache[i][j] = false;
         return false;
     }
@@ -81,7 +87,7 @@ public class interleavingStrings {
             dp[0][i] = true;
 
         int k = 0;
-        for(int i = 1; i < row; i++) {
+        for(int i = 1; i < col; i++) {
             for(int j = 1; j < row; j++) {
                 k = i+j-1;
                 if(one.charAt(i-1) == three.charAt(k-1) && dp[i-1][j]) {

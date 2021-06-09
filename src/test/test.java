@@ -50,4 +50,36 @@ public class test {
         }
         return true;
     }
+    public void StringInterleave() {
+        String one = "algoexpert";
+        String two = "your-dream-job";
+        String three = "your-algodream-expertjob";
+
+        System.out.println(interleavingDP(one, two, three));
+    }
+    public  static boolean interleavingDP(String one, String two, String three) {
+
+        if(one.length() + two.length() != three.length())
+            return false;
+        boolean[][] dp = new boolean[three.length()][three.length()];
+        return interleavingDPUtils(one, two, three, 0, 0 );
+    }
+    public  static boolean interleavingDPUtils(String one, String two, String three, int i, int j) {
+        int k = i + j;
+
+        if(k == three.length())
+            return true;
+
+        boolean result = false;
+        if(i < one.length() && one.charAt(i) == three.charAt(k)) {
+            if(interleavingDPUtils(one, two, three, i+1, j))
+                return true;
+        }
+
+        if(j < two.length() && two.charAt(j) == three.charAt(k)) {
+            return interleavingDPUtils(one, two, three,  i, j+1);
+        }
+
+        return false;
+    }
 }
