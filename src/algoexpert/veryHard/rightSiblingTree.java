@@ -65,48 +65,51 @@ public class rightSiblingTree {
         BinaryTree res = rightSiblingTree(root);
         while(res != null) {
             BinaryTree right = res.right;
-            System.out.println(res.value + "\n");
+            System.out.print(res.value + " ");
             while(right != null) {
                 System.out.print(right.value + " ");
                 right = right.right;
             }
+            System.out.println();
             res = res.left;
         }
     }
-    public static BinaryTree rightSiblingTree(BinaryTree root) {
-        // Write your code here.
-        if(root == null)
-            return null;
-        HashMap<Integer, ArrayList<BinaryTree>> mapRightSiblings = new HashMap<>();
-        //rightSiblingTreeUtils(root.left, root.right);
-        for(ArrayList<BinaryTree> entry : mapRightSiblings.values()) {
-            for(BinaryTree list : entry) {
-                if(list != null)
-                    list.right = null;
+
+        // O(n) time | O(d) space - where n is the number of nodes in
+        // the Binary Tree and d is the depth (height) of the Binary Tree
+        public static BinaryTree rightSiblingTree(BinaryTree root) {
+            mutate(root, null, false);
+            return root;
+        }
+        public static void mutate(BinaryTree node, BinaryTree parent, boolean isLeftChild) {
+            if (node == null)
+                return;
+
+            var left = node.left;
+            var right = node.right;
+            mutate(left, node, true);
+
+            if (parent == null) {
+                node.right = null;
+            } else if (isLeftChild) {
+                node.right = parent.right;
+            } else {
+                if (parent.right == null) {
+                    node.right = null;
+                } else {
+                    node.right = parent.right.left;
+                }
+            }
+            mutate(right, node, false);
+        }
+
+        static class BinaryTree {
+            int value;
+            BinaryTree left = null;
+            BinaryTree right = null;
+
+            public BinaryTree(int value) {
+                this.value = value;
             }
         }
-        return root;
-    }
-    public static void rightSiblingTreeUtils(BinaryTree root, int key, HashMap<Integer, ArrayList<BinaryTree>> mapRightSiblings) {
-        // Write your code here.
-        ArrayList<BinaryTree> list = mapRightSiblings.getOrDefault(key, new ArrayList<BinaryTree>());
-        if(root == null) {
-            list.add(null);
-            return;
-        }
-        list.add(root);
-
-        rightSiblingTreeUtils(root.left, key+ 1, mapRightSiblings);
-        rightSiblingTreeUtils(root.right, key+ 1, mapRightSiblings);
-    }
-    // This is the class of the input root. Do not edit it.
-    static class BinaryTree {
-        int value;
-        BinaryTree left = null;
-        BinaryTree right = null;
-
-        public BinaryTree(int value) {
-            this.value = value;
-        }
-    }
 }

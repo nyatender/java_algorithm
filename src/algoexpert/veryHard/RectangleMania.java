@@ -49,8 +49,7 @@ public class RectangleMania {
 
     public static Map<String, Map<String, List<Integer[]>>> getCoordsTable(List<Integer[]> coords) {
 
-     Map<String, Map<String, List<Integer[]>>> coordsTable =
-             new HashMap<String, Map<String, List<Integer[]>>>();
+     Map<String, Map<String, List<Integer[]>>> coordsTable = new HashMap<String, Map<String, List<Integer[]>>>();
 
      for (Integer[] coord1 : coords) {
         Map<String, List<Integer[]>> coord1Directions = new HashMap<String, List<Integer[]>>();
@@ -84,8 +83,7 @@ public class RectangleMania {
         }
         return "";
     }
-    public static int getRectangleCount(
-            List<Integer[]> coords, Map<String, Map<String, List<Integer[]>>> coordsTable) {
+    public static int getRectangleCount(List<Integer[]> coords, Map<String, Map<String, List<Integer[]>>> coordsTable) {
         int rectangleCount = 0;
         for (Integer[] coord : coords) {
             rectangleCount += clockwiseCountRectangles(coord, coordsTable, UP, coord);
@@ -93,11 +91,8 @@ public class RectangleMania {
         return rectangleCount;
     }
 
-    public static int clockwiseCountRectangles(
-            Integer[] coord,
-            Map<String, Map<String, List<Integer[]>>> coordsTable,
-            String direction,
-            Integer[] origin) {
+    public static int clockwiseCountRectangles(Integer[] coord,Map<String, Map<String,
+                                               List<Integer[]>>> coordsTable, String direction, Integer[] origin) {
         String coordString = coordToString(coord);
         if (direction == LEFT) {
             boolean rectangleFound = coordsTable.get(coordString).get(LEFT).contains(origin);
