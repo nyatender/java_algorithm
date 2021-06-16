@@ -13,56 +13,66 @@ public class zigzagPattern {
         array.add(Arrays.asList(2, 5, 9, 11));
         array.add(Arrays.asList(6, 8, 12, 15));
         array.add(Arrays.asList(7, 13, 14, 16));
-        zigzagTraverse(array).forEach(val -> System.out.print(val + " "));
+        //Integer [][]list = (Integer[][])array.toArray();
+        Integer[][] matrix = new Integer[array.size()][];
+        for (int i = 0; i < array.size(); i++) {
+            List<Integer> row = array.get(i);
+            matrix[i] = row.toArray(new Integer[row.size()]);
+        }
+        for(int i = 0; i < matrix.length; i++) {
+            for(int c = 0; c < matrix[0].length; c++) {
+                System.out.print(matrix[i][c] + " ");
+            }
+            System.out.println();
+        }
+        int j = 0;
+       // zigzagTraverse(array).forEach(val -> System.out.print(val + " "));
     }
     public static List<Integer> zigzagTraverse(List<List<Integer>> array) {
         // Write your code here.
-        ArrayList<Integer[]> dir = new ArrayList<>() {
-            {
-                add(new Integer[]{-1,-1});
-                add(new Integer[]{0,1});
-                add(new Integer[]{1,1});
-                add(new Integer[]{1,0});
-            };
-        };
-        //System.out.println(array.size() + " " + array.get(0).size());
-        int dIndex = 0;
-        int i = 0;
-        int j = 0;
-        ArrayList<Integer>result = new ArrayList<>();
-        //System.out.println(array.get(0).get(0));
-        //while(i < array.size() && j < array.get(0).size()) {
-        while(result.size() !=  array.size() * array.get(0).size()) {
-          //  j = j + dir.get(dIndex).getValue();
-            if(isSafe(i , j , array.size(), array.get(0).size())) {
-              //  System.out.println(array.get(i).get(j));
-                result.add(array.get(i).get(j));
-                if(dIndex % 2 == 1) {
-                    dIndex++;
-                    dIndex %= dir.size();
-                }
-                if(isSafe(i + dir.get(dIndex)[0],
-                        j + dir.get(dIndex)[1], array.size(), array.get(0).size())) {
-                    i = i + dir.get(dIndex)[0];
-                    j = j + dir.get(dIndex)[1];
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        int R = array.size() -1;
+        int C = array.get(0).size()-1;
+
+        int row = 0;
+        int col = 0;
+
+        boolean isGoingDown = true;
+        while(isOutOfBound(row, col, R, C)) {
+            result.add(array.get(row).get(col));
+            if(isGoingDown) {
+                if(col == 0 || row == R) {
+                    isGoingDown = false;
+                    if(row == R) {
+                        col++;
+                    }
+                    else {
+                        row++;
+                    }
                 }
                 else {
-                    dIndex++;
-                    dIndex %= dir.size();
-                    i = i + dir.get(dIndex)[0];
-                    j = j + dir.get(dIndex)[1];
+                    row++;
+                    col--;
                 }
             }
             else {
-                dIndex++;
-                dIndex %= dir.size();
-                i = i + dir.get(dIndex)[0];
-                j = j + dir.get(dIndex)[1];
+                if (row == 0 || col == C) {
+                    isGoingDown = true;
+                    if (col == C) {
+                        row++;
+                    } else {
+                        col++;
+                    }
+                } else {
+                    row--;
+                    col++;
+                }
             }
         }
+
         return result;
     }
-    static boolean isSafe(int r, int c, int R, int C) {
-        return r >= 0 && c >= 0 && r < R && c < C;
+    public static boolean isOutOfBound(int row, int col, int R, int C) {
+        return row <= R && col <= C;
     }
 }

@@ -2,47 +2,45 @@ package algoexpert.Hard;
 
 public class subarraySort {
     public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 7, 10, 11, 7,12,6,7,16,18,19};
+        int[] result = subArraySort(arr);
 
+        System.out.println("[" + result[0] + " " + result[1] + "]");
     }
-    public static int[] subarraySort(int[] array) {
-        // Write your code here.
-        int beginIndex = -1;
-        int endIndex = -1;
-        int i = 1;
-        for(; i < array.length; i++) {
-            if(array[i] > array[i-1])
-                continue;
-            else
-                break;
-        }
-        if(i == array.length)
-            return new int[] {beginIndex, endIndex};
-        int j = i-1;
-        for(; j >= 0; j--) {
-            if(array[j] >= array[i])
-                continue;
-            else
-                break;
-        }
-        beginIndex = j+1;
 
-        i = array.length - 1;
-        for(; i >= 0; i--) {
-            if(array[i] > array[i-1])
-                continue;
-            else
-                break;
+    // O(n) time | O(1) space
+    public static int[] subArraySort(int[] array) {
+        int minOutOfOrder = Integer.MAX_VALUE;
+        int maxOutOfOrder = Integer.MIN_VALUE;
+        for (int i = 0; i < array.length; i++) {
+            int num = array[i];
+            if (isOutOfOrder(i, num, array)) {
+                minOutOfOrder = Math.min(minOutOfOrder, num);
+                maxOutOfOrder = Math.max(maxOutOfOrder, num);
+            }
         }
-
-        j = i+1;
-        for(; j < array.length - 1; j++) {
-            if(array[j] < array[i])
-                continue;
-            else
-                break;
+        if (minOutOfOrder == Integer.MAX_VALUE) {
+            return new int[]{-1, -1};
         }
-        endIndex = j;
+        int subarrayLeftIdx = 0;
+        while (minOutOfOrder >= array[subarrayLeftIdx]) {
+            subarrayLeftIdx++;
+        }
+        int subarrayRightIdx = array.length - 1;
+        while (maxOutOfOrder <= array[subarrayRightIdx]) {
+            subarrayRightIdx--;
+        }
+        return new int[]{subarrayLeftIdx, subarrayRightIdx};
+    }
 
-        return new int[] {beginIndex, endIndex};
+    public static boolean isOutOfOrder(int i, int num, int[] array) {
+        if (i == 0) {
+            return num > array[i + 1];
+        }
+        if (i == array.length - 1) {
+            return num < array[i - 1];
+        }
+        return num > array[i + 1] || num < array[i - 1];
     }
 }
+

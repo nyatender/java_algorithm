@@ -14,7 +14,8 @@ Output: [0 0 1 2 2 2 ]
  */
 public class DuchNationalFlagProblem {
     public static void main(String[] args) {
-       int[] Input = {0,2,1, 0, 2, 1, 0};
+       //int[] Input = {0,2,1, 0, 2, 1, 0};
+       int[] Input = {1, 0, 0, -1, -1, 0, 1, 1};
        sort2(Input);
        for(int i = 0; i < Input.length; i++)
            System.out.println(Input[i] + " ");
@@ -24,7 +25,7 @@ public class DuchNationalFlagProblem {
         int s = 0;
         int end = arr.length-1;
         int i = 0;
-        while( i < end) {
+        while( i <= end) {
             if(arr[i] == 0) {
                 Swap(arr, i, s);
                 i++;

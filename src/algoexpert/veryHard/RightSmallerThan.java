@@ -80,7 +80,7 @@ public class RightSmallerThan {
             }
             else {
                 numSmallerAtInsertTime += leftSubTreeCount;
-                if(value > this.value)
+                if(value > this.value) //to avoid to include equal values
                     numSmallerAtInsertTime++;
 
                 if(rightSubTree == null) {

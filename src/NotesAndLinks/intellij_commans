@@ -28,6 +28,11 @@ Default: Type psvm (public static void main) > press Tab.
 
 alt + shift + enter  //import packages using
 
+Serach everywhere "Double Shift"
+got to file       "Clt + Shift + N"
+Recent Files      "Clt + E"
+Navigation Bar    "Alt+Home"
+
 //https://stackoverflow.com/questions/13751/how-can-i-permanently-enable-line-numbers-in-intellij
 
  */

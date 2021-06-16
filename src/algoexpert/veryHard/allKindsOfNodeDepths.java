@@ -77,7 +77,8 @@ public class allKindsOfNodeDepths {
             return allKindsOfNodeDepths(root.left) + allKindsOfNodeDepths(root.right) + nodeDepthsSol2(root, 0);
         }
         public static int nodeDepthsSol2(BinaryTree node, int depth) {
-            if (node == null) return 0;
+            if (node == null)
+                return 0;
             return depth + nodeDepthsSol2(node.left, depth + 1) + nodeDepthsSol2(node.right, depth+1);
         }
 

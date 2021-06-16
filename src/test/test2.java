@@ -2,14 +2,21 @@ package test;
 
 import algoexpert.veryHard.rightSiblingTree;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class test2 {
     // Function to print all distinct palindrome
     // sub-strings of s
+    private final int CAPACITY;
+    test2(int capacity) {
+        CAPACITY = 10;
+        HashMap<Integer, Integer> map = new LinkedHashMap<Integer, Integer>(CAPACITY, 0.75f, true) {
+            protected boolean removeEldestEntry(Map.Entry eldest)
+            {
+                return size() > CAPACITY;
+            }
+        };
+    }
     public static void main(String args[]) {
         BinaryTree root = new BinaryTree(1);
         root.left = new BinaryTree(2);
@@ -34,7 +41,11 @@ public class test2 {
 
         HashMap<Integer, ArrayList<Integer>> res = new HashMap<>();
         rightSiblingTree1(root, null, true);
+
+        HashMap<Integer, Integer> v = new LinkedHashMap<>();
+
     }
+
     static class BinaryTree {
         int value;
         BinaryTree left = null;
