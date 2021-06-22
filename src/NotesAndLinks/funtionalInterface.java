@@ -23,13 +23,9 @@ public class funtionalInterface {
 
         //joining predicates
         System.out.println("predicates : " + checkEvenLength.and(checkLenght).test("yatender"));
-
         System.out.println("predicates : " + checkEvenLength.or(checkLenght).test("yatender"));
-
         System.out.println("predicates : " + checkEvenLength.negate().test("yatender"));
-
         System.out.println("predicates : " + Predicate.isEqual("yatender").test("yatender"));
-
     }
 
     public static void functions() {
@@ -39,7 +35,7 @@ public class funtionalInterface {
 
         System.out.println("functions : " + doubles.apply(2));
 
-        //Functional chaining
+        // Functional chaining
         // double and then call cube on it
         System.out.println("functions : " + doubles.andThen(cube).apply(2));
 
