@@ -51,15 +51,15 @@ class NonBlockingProducerConsumer {
         if(!lock.validate(stamp)) {
             // do something to get latest data
             // this is just a thought
-            stamp = lock.tryReadLock();
-            result = -1;
-            if(stamp != 0L) {
-                try {
-                    result = map.get(key);
-                } finally {
-                    lock.unlockRead(stamp);
-                }
-            }
+//            stamp = lock.tryReadLock();
+//            result = -1;
+//            if(stamp != 0L) {
+//                try {
+//                    result = map.get(key);
+//                } finally {
+//                    lock.unlockRead(stamp);
+//                }
+//            }
         }
 
         return result;

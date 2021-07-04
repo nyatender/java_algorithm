@@ -3,7 +3,7 @@ package Multithreading;
 
 public class orderPrinting {
     private int i = 0;
-    private Object lock; // = new Object();
+    private Object lock;
     orderPrinting(Object lock) {
         this.lock = lock;
     }

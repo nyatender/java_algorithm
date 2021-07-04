@@ -1,4 +1,4 @@
-package problems;
+package problems.generalProblemSet;
 
 public class findFirstCapitalAndSmallLetterOccurence {
     public static char getFirstCapitalAndSmall(String input) {

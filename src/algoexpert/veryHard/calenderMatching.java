@@ -52,8 +52,10 @@ public class calenderMatching {
                 j++;
             }
         }
-         while (i < calendar1.size()) merged.add(calendar1.get(i++));
-         while (j < calendar2.size()) merged.add(calendar2.get(j++));
+         while (i < calendar1.size())
+             merged.add(calendar1.get(i++));
+         while (j < calendar2.size())
+             merged.add(calendar2.get(j++));
  return merged;
 }
     public static List<Meeting> flattenCalendar(List<Meeting> calendar) {

@@ -84,4 +84,60 @@ public class MultiStringSearch {
             }
         }
     }
+
+    //2nd Solution suing tries
+    static public boolean[] mutliStringSearchTrie(String bigString,String[] smallString) {
+        trie obj = new trie(-1);
+        int in = 0;
+        for(String st : smallString)
+            obj.insert(st, in++);
+        boolean[] result = new boolean[smallString.length];
+        for(int i = 0; i < bigString.length(); i++) {
+            for(int j = i; j < bigString.length(); j++) {
+                String str = bigString.substring(i, j+1);
+                int index = obj.getIndex(str);
+                if(index != -1)
+                {
+                    result[index] = true;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    static class trie {
+        public HashMap<Character, trie> childrens;
+        public int index;
+
+        public trie(int index) {
+            this.childrens = new HashMap<>();
+            this.index = index;
+        }
+
+        void insert(String input, int index) {
+            trie temp = this;
+            for(int i =0; i< input.length(); i++) {
+                char ch = input.charAt(i);
+                if(!temp.childrens.containsKey(ch)) {
+                    temp.childrens.put(ch, new trie(-1));
+                }
+                temp = temp.childrens.get(ch);
+            }
+            temp.index = index;
+        }
+        int getIndex(String input) {
+            trie temp = this;
+            int i =0;
+            for(; i < input.length(); i++) {
+                char ch = input.charAt(i);
+                if(temp.childrens.containsKey(ch)) {
+                    temp = temp.childrens.get(ch);
+                }
+                else
+                    break;
+            }
+            return temp.index;
+        }
+    }
 }

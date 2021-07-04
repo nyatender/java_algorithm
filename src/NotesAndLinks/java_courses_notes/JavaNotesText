@@ -101,11 +101,12 @@ https://www.educative.io/courses/java-interview-handbook
              Interfaces are also used in instances where multiple inheritance of type is desired.
              Lastly, use an interface if you want to specify the behavior of a certain type but aren't concerned
              who implements the behavior.
-        28.An interface may have no methods at all. Such an interface can be useful to refer to objects of
+        28. An interface may have no methods at all. Such an interface can be useful to refer to objects of
             a bunch of classes that are related and implement the empty interface.
             Such interfaces are also called marker interfaces.
         29.A functional interface is an interface that contains only one abstract method.
         30.What is the difference between Comparable interface and Comparator interface?
+        https://www.geeksforgeeks.org/comparable-vs-comparator-in-java/
         31.Lambda expressions allow us to pass code as data or functionality as a method argument.
            Lambda expressions can be used to replace writing anonymous classes, when the class implements a functional interface.
            A functional interface has only a single abstract method and may have default or static methods.
@@ -242,14 +243,12 @@ https://www.educative.io/courses/java-interview-handbook
         Read more: https://javarevisited.blogspot.com/2012/12/how-classloader-works-in-java.html#ixzz6u4Gg6xFc
 
         66. NoClassDefFoundError vs ClassNotFoundException
-        ClassNotFoundException which comes while trying to load a class at run-time only and the name was provided during
-        runtime, not at compile-time. Many Java developer mingles this two Error and gets confused.
+        ClassNotFoundException and NoClassDefFoundError both occur when class is not found at runtime. They are related to Java classpath
+        As the name suggests, ClassNotFoundException is an exception while NoClassDefFoundError is an error.
+        ClassNotFoundException occurs when classpath is does not get updated with required JAR files. while error occurs
+        when required class definition is not present at runtime.
 
         Read more: https://javarevisited.blogspot.com/2011/06/noclassdeffounderror-exception-in.html#ixzz6u4H7KAHt
-
-        NoClassDefFoundError in Java comes when Java Virtual Machine is not able to find a particular class at runtime
-        which was available at compile time. For example, if we have a method call from a class or accessing any static member
-         of a Class and that class is not available during run-time then JVM will throw NoClassDefFoundError.
 
          67. How to load class explicitly in Java
          Java provides API to explicitly load a class by
@@ -316,6 +315,21 @@ https://www.educative.io/courses/java-interview-handbook
 
          84.Fork-join framework
          https://www.pluralsight.com/guides/introduction-to-the-fork-join-framework
+
+         85.why marker interface used
+         You don't need to implement Serializable to have serialization, or Cloneable to have cloning.
+         The point of those interfaces is that Java has built in mechanisms for cloning and serialization,
+         and you only need to implement those interfaces if you wish to make use of those inbuilt mechanisms.
+         So just by implementing Serializable, you are automatically able to use that class with ObjectInputStream and
+         ObjectOutputStream without any extra code.
+
+         Cloneable, on the other hand, I find virtually useless. Normally you just implement Cloneable and override
+         Object.clone and make it public, and you instantly have cloning. But it is said to be broken and you are better
+         off just coding your own cloning logic, like with a copy constructor.
+
+         86. can we overload method based on exception throw
+
+         87.thread vs Runnable
 
         Read more: https://javarevisited.blogspot.com/2011/06/noclassdeffounderror-exception-in.html#ixzz6u4Ku2oS1
           Educative:

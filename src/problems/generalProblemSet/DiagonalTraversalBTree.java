@@ -1,4 +1,4 @@
-package problems;
+package problems.generalProblemSet;
 // Java program for diagonal traversal of Binary Tree
 import java.util.HashMap;
 import java.util.Map;

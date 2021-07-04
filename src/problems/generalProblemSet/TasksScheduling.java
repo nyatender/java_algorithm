@@ -1,4 +1,4 @@
-package problems;
+package problems.generalProblemSet;
 
 /*
 Problem Statement #

@@ -112,6 +112,21 @@ public class    ListImp {
 
         list1.addAll(list2);
     }
+    //===================================================
+    class Interval {
+        int start;
+        int end;
+
+        public Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+    };
+    public static void ListToArray() {
+        List<Interval> result = new ArrayList<Interval>();
+        Interval[] res = result.toArray(new Interval[result.size()]);
+    }
+    //===================================================
 }
 
 //https://stackoverflow.com/questions/24796273/incompatible-types-list-of-list-and-arraylist-of-arraylist

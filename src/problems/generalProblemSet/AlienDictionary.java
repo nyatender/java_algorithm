@@ -1,4 +1,4 @@
-package problems;
+package problems.generalProblemSet;
 
 /*
 There is a dictionary containing words from an alien language for which we don’t know the ordering of the characters.

@@ -55,6 +55,13 @@ public class waterFallStream {
     public double[] waterfallStreams(double[][] array, int source) {
         double[] rowAbove = array[0];
         // We'll use -1 to represent water, since 1 is used for a block.
+// [0, 0, 0, -1, 0, 0, 0],
+// [1, 0, 5, -1, 5, 0, 0],
+// [0, 0, 1,  1, 1, 0, 0],
+// [0, 0, 0,  0, 0, 0, 0],
+// [1, 1, 1,  0, 0, 1, 0],
+// [0, 0, 0,  0, 0, 0, 1],
+// [0, 0, 0,  0, 0, 0, 0],
         rowAbove[source] = -1;
         for (int row = 1; row < array.length; row++) {
             double[] currentRow = array[row];
@@ -83,18 +90,18 @@ public class waterFallStream {
                         break;
                     }
                 }
-            // Move water left.
-            int leftIdx = idx;
-            while (leftIdx - 1 >= 0) {
-                leftIdx -= 1;
-                if (rowAbove[leftIdx] == 1.0) { // if there is a block in the way
-                    break;
+                // Move water left.
+                int leftIdx = idx;
+                while (leftIdx - 1 >= 0) {
+                    leftIdx -= 1;
+                    if (rowAbove[leftIdx] == 1.0) { // if there is a block in the way
+                        break;
+                    }
+                    if (currentRow[leftIdx] != 1.0) { // if there is no block below
+                        currentRow[leftIdx] += splitWater;
+                        break;
+                    }
                 }
-                if (currentRow[leftIdx] != 1.0) { // if there is no block below
-                    currentRow[leftIdx] += splitWater;
-                    break;
-                }
-            }
         }
         rowAbove = currentRow;
     }

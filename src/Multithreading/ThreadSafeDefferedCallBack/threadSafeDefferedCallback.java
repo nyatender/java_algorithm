@@ -18,23 +18,23 @@ class Demonstration {
 
 class DeferredCallbackExecutor {
 
-    PriorityQueue<CallBack> q = new PriorityQueue<CallBack>(new Comparator<CallBack>() {
-        public int compare(CallBack o1, CallBack o2) {
-            return (int) (o1.executeAt - o2.executeAt);
-        }
-    });
+    PriorityQueue<CallBack> q = new PriorityQueue<CallBack>((o1, o2) -> (int)(o1.executeAt - o2.executeAt));
+
     ReentrantLock lock = new ReentrantLock();
     Condition newCallbackArrived = lock.newCondition();
+    boolean isRunning = true;
 
     private long findSleepDuration() {
         long currentTime = System.currentTimeMillis();
         return q.peek().executeAt - currentTime;
     }
-
+    public void stop() {
+        isRunning = false;
+    }
     public void start() throws InterruptedException {
         long sleepFor = 0;
 
-        while (true) {
+        while (isRunning) {
 
             lock.lock();
 
@@ -45,7 +45,7 @@ class DeferredCallbackExecutor {
             while (q.size() != 0) {
                 sleepFor = findSleepDuration();
 
-                if(sleepFor <=0)
+                if(sleepFor <= 0)
                     break;
 
                 newCallbackArrived.await(sleepFor, TimeUnit.MILLISECONDS);
@@ -109,5 +109,7 @@ class DeferredCallbackExecutor {
         for (Thread t : allThreads) {
             t.join();
         }
+        deferredCallbackExecutor.stop();
+        System.out.println("finished");
     }
 }
