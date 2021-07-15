@@ -58,7 +58,7 @@ public class interleavingStrings {
 
         if (i < one.length() && one.charAt(i) == three.charAt(k)) {
             cache[i][j] = areInterwoven(one, two, three, i + 1, j, cache);
-            if (cache[i][j])
+            if (cache[i][j] == true)
                 return true;
         }
 

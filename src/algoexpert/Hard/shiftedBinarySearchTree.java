@@ -2,8 +2,8 @@ package algoexpert.Hard;
 
 public class shiftedBinarySearchTree {
     public static void main(String[] args) {
-        //int[] array = new int[]{45, 61, 71, 72, 73, 0, 1, 21, 33, 37};
-        int[] array = new int[]{23, 111, 1, 5};
+        int[] array = new int[]{45, 61, 71, 72, 73, 0, 1, 21, 33, 37};
+        //int[] array = new int[]{23, 111, 1, 5};
         int target = 33;
         System.out.println(shiftedBinarySearch(array, target));
     }
@@ -33,7 +33,7 @@ public class shiftedBinarySearchTree {
             }
         }
         else {
-            if(target >= array[mid] && target <= array[end])
+            if(target >= array[mid+1] && target <= array[end])
                 return shiftedBinarySearchUtils(array, mid+1, end, target);
             else {
                 return shiftedBinarySearchUtils(array, start, mid, target);

@@ -50,20 +50,25 @@ public class LargestRectangleUnderSkyline {
         ArrayList<Integer> input = new ArrayList<>(Arrays.asList(1, 3, 3, 2, 4, 1, 5, 3, 2));
         System.out.println(largestRectangleUnderSkyline(input));
     }
+
     // O(n) time | O(n) space - where n is the number of buildings
     public static int largestRectangleUnderSkyline(ArrayList<Integer> buildings) {
-        Stack<Integer> pillarIndices = new Stack<Integer>();
+        // Write your code here.
+        ArrayList<Integer> input = new ArrayList<Integer>(buildings);
+        Stack<Integer> st = new Stack<>();
         int maxArea = 0;
-        ArrayList<Integer> extendedBuildings = new ArrayList<Integer>(buildings);
-        extendedBuildings.add(0);
-        for (int idx = 0; idx < extendedBuildings.size(); idx++) {
-            int height = extendedBuildings.get(idx);
-            while (!pillarIndices.isEmpty() && extendedBuildings.get(pillarIndices.peek()) >= height) {
-                int pillarHeight = extendedBuildings.get(pillarIndices.pop());
-                int width = (pillarIndices.isEmpty()) ? idx : idx - pillarIndices.peek() - 1;
-                maxArea = Math.max(width * pillarHeight, maxArea);
+        int i = 0;
+        input.add(0);
+        while (i < input.size()) {
+            int currHeight = input.get(i);
+            while (!st.isEmpty() && input.get(st.peek()) >= currHeight) {
+                int preMaxHeight = input.get(st.pop());
+                int width = (st.empty() ? i : i - st.peek() - 1);
+                int maxAreaSoFar = preMaxHeight * width;
+                maxArea = Math.max(maxArea, maxAreaSoFar);
             }
-            pillarIndices.push(idx);
+            st.push(i);
+            i++;
         }
         return maxArea;
     }

@@ -125,6 +125,8 @@ public class    ListImp {
     public static void ListToArray() {
         List<Interval> result = new ArrayList<Interval>();
         Interval[] res = result.toArray(new Interval[result.size()]);
+
+
     }
     //===================================================
 }

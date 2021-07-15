@@ -67,7 +67,7 @@ public class RightSmallerThan {
         }
         public void insert(int idx, int value) {
             insertUtils(idx, value, 0);
-        }
+        } //8, 5, 11, -1, 3, 4, 2
         public void insertUtils(int idx, int value, int numSmallerAtInsertTime) {
             if(value < this.value) {
                 leftSubTreeCount++;

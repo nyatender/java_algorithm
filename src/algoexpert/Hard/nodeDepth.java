@@ -4,32 +4,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class nodeDepth {
-    public static int allKindsOfNodeDepths(BinaryTree root) {
-        // Write your code here.
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int left = allKindsOfNodeDepthsUtils(map, root.left, 2);
-        int right = allKindsOfNodeDepthsUtils(map, root.right, 3);
-        int sum = 0;
-        /*for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            // map.forEach((k,v) -> {sum += sum + v;});
-        }*/
-        for(Integer entry : map.values()) {
-            sum += entry;
-        }
-        return sum;
+    public static void main(String[] args) {
+
     }
-    static int allKindsOfNodeDepthsUtils(HashMap<Integer, Integer> map, BinaryTree root, int level) {
+    public static int allKindsOfNodeDepths(BinaryTree root) {
+        if (root == null) return 0;
+        return allKindsOfNodeDepths(root.left) + allKindsOfNodeDepths(root.right) + nodeDepths(root, 0);
+    }
 
-        if(root == null)
+    public static int nodeDepths(BinaryTree node, int depth) {
+        if (node == null)
             return 0;
-
-        int left = allKindsOfNodeDepthsUtils(map, root, (level-1)*2);
-        int right = allKindsOfNodeDepthsUtils(map, root, (level*2) + 1);
-
-        if(left+right > 0)
-            map.put(level, (left+right));
-
-        return left+right;
+        return depth + nodeDepths(node.left, depth + 1) + nodeDepths(node.right, depth+1);
     }
 
     static class BinaryTree {

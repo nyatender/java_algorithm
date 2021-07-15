@@ -48,7 +48,7 @@ public class CountInversions {
         int inversions = 0;
         while (left < middle && right < end) {
             if (array[left] <= array[right]) {
-              // sortedArray.add(array[left]);
+               sortedArray.add(array[left]);
                 left += 1;
             } else {
                 inversions += middle - left;
@@ -56,16 +56,16 @@ public class CountInversions {
                 right += 1;
             }
         }
-//        for (int idx = left; idx < middle; idx++) {
-//            sortedArray.add(array[idx]);
-//        }
-//        for (int idx = right; idx < end; idx++) {
-//            sortedArray.add(array[idx]);
-//        }
-//        for(int idx =0; idx < sortedArray.size(); idx++) {
-//            int num = sortedArray.get(idx);
-//            array[start + idx] = num;
-//        }
+        for (int idx = left; idx < middle; idx++) {
+            sortedArray.add(array[idx]);
+        }
+        for (int idx = right; idx < end; idx++) {
+            sortedArray.add(array[idx]);
+        }
+        for(int idx =0; idx < sortedArray.size(); idx++) {
+            int num = sortedArray.get(idx);
+            array[start + idx] = num;
+        }
         return inversions;
     }
 }

@@ -10,9 +10,10 @@ public class rainWaterTapping {
         // left[i] contains height of tallest bar to the
         // left of i'th bar including itself
 
-        int n  =arr.length;
+        int n  = arr.length;
         if(n == 0)
             return 0;
+
         int left[] = new int[n];
 
         // Right [i] contains height of tallest bar to

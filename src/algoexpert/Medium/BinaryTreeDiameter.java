@@ -19,6 +19,7 @@ public class BinaryTreeDiameter {
     // O(n) time | O(h) space - where n is the number of nodes in
     // the Binary Tree and h is the height of the Binary Tree
     static public int binaryTreeDiameter(BinaryTree tree) {
+
         return getTreeInfo(tree).diameter;
     }
     static public TreeInfo getTreeInfo(BinaryTree tree) {
@@ -27,10 +28,13 @@ public class BinaryTreeDiameter {
         }
         TreeInfo leftTreeInfo = getTreeInfo(tree.left);
         TreeInfo rightTreeInfo = getTreeInfo(tree.right);
-        int longestPathThroughRoot = leftTreeInfo.height + rightTreeInfo.height;
+
+        int longestPathThroughRoot = 1 + leftTreeInfo.height + rightTreeInfo.height;
         int maxDiameterSoFar = Math.max(leftTreeInfo.diameter, rightTreeInfo.diameter);
+
         int currentDiameter = Math.max(longestPathThroughRoot, maxDiameterSoFar);
         int currentHeight = 1 + Math.max(leftTreeInfo.height, rightTreeInfo.height);
+
         return new TreeInfo(currentDiameter, currentHeight);
     }
     static class NodeInfo {
